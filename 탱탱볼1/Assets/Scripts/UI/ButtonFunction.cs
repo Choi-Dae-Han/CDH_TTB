@@ -171,18 +171,17 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         BGI.texture = BGIofButton;
     }
 
-    public void AddEffect(GameObject obj)
+    public void ChangeBallEffect(int i)
     {
-        obj.transform.SetParent(GM.Ball_Obj.transform);
-        obj.transform.localPosition = Vector3.zero;
+        GM.Ball_Obj.GetComponent<Ball>().ChangeBallEffect(i);
     }
 
     public void ChangeBallSkin(Sprite ballSkin)
     {
-        GM.Ball_Obj.GetComponent<SpriteRenderer>().sprite = ballSkin;
+        GM.Ball_Obj.GetComponent<Ball>().UsingSkin = ballSkin;
     }
 
-    public void ChangeSE(AudioClip SE)
+    public void ChangeBallSE(AudioClip SE)
     {
         GM.Ball_Obj.GetComponent<Ball>().BounceSound = SE;
     }

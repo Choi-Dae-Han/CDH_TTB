@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1893944773696515647}
   - component: {fileID: 7811478501794614735}
   - component: {fileID: 7512483278414345678}
-  - component: {fileID: 6253047095681970396}
   m_Layer: 8
   m_Name: Ball
   m_TagString: Player
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3adfb2d10089fc44aa51bf53992cda02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5bceb16ce0cbccd4d96e6f2d0fd01b52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,17 +111,21 @@ MonoBehaviour:
   fYVelocity: 0
   fRadius: 0
   fRotateSpeed: 2
+  fMaxXVelocity: 200
+  fMaxYVelocity: 800
+  fDecreaseXVelocity: 1.5
   LeftCrashed: 0
   RightCrashed: 0
   TopCrashed: 0
   BottomCrashed: 0
-  UsingSkin: {fileID: 0}
-  fMaxXVelocity: 200
-  fMaxYVelocity: 800
-  fDecreaseXVelocity: 1.5
-  DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
-  BounceSound: {fileID: 8300000, guid: 98d8f040eed64774f8e174b8454e80ae, type: 3}
+  fTime: 0
+  ShowCycle: 0.15
+  BallForEffect: {fileID: 359471651764582814, guid: b035567c8db8fcd42ae5df132a3b1239,
+    type: 3}
   DeadEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  UsingSkin: {fileID: 21300000, guid: 3adfb2d10089fc44aa51bf53992cda02, type: 3}
+  BounceSound: {fileID: 8300000, guid: 98d8f040eed64774f8e174b8454e80ae, type: 3}
+  DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
 --- !u!58 &7811478501794614735
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,21 +163,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6253047095681970396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063703666594532468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fddc04342bdda3242a762d5f197c978d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fTime: 0
-  ShowCycle: 0.15
-  BallOBj: {fileID: 359471651764582814, guid: b035567c8db8fcd42ae5df132a3b1239, type: 3}
 --- !u!1 &6098838653738595775
 GameObject:
   m_ObjectHideFlags: 0

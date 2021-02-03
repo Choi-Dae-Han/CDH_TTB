@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseButton;
     public Transform MainScreenTr;
     public Transform MainCameraTr;
-    public Camera camera;
+    public Camera camera1;
     public Transform StageTR;
     Text TimeText;
 
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        camera = MainCameraTr.gameObject.GetComponent<Camera>();
+        camera1 = MainCameraTr.gameObject.GetComponent<Camera>();
         //var jsonData = JE.LoadJsonFile<GameManager>(Application.dataPath, "PlayerInfo", path);
         //nOwnedCoin = jsonData.nOwnedCoin;
 

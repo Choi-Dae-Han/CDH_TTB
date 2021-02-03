@@ -16,19 +16,30 @@ public class Ball : MonoBehaviour
     public float fYVelocity = 0f;
     public float fRadius = 0f;
     public float fRotateSpeed = 0f;
+    [SerializeField] private float fMaxXVelocity = 200f;
+    [SerializeField] private float fMaxYVelocity = 800f;
+    [SerializeField] private float fDecreaseXVelocity = 2f;
     public bool LeftCrashed = false;
     public bool RightCrashed = false;
     public bool TopCrashed = false;
     public bool BottomCrashed = false;
+
+    //Effect
+    public delegate void Effect();
+    public Effect E = null;
+    public float fTime = 0f;
+    public float ShowCycle = 0.15f;
+    public GameObject BallForEffect;
+    [SerializeField] private GameObject DeadEffect;
+    SpriteRenderer SR;
+
+    //Skin
     public Sprite UsingSkin;
 
-    [SerializeField] private float fMaxXVelocity = 200f;
-    [SerializeField] private float fMaxYVelocity = 800f;
-    [SerializeField] private float fDecreaseXVelocity = 2f;
-
-    [SerializeField] private AudioClip DeadSound;
+    //Sound
     public AudioClip BounceSound;
-    [SerializeField] private GameObject DeadEffect;
+    [SerializeField] private AudioClip DeadSound;
+
     private AudioSource AM;
     private GameManager GM;
 
@@ -37,7 +48,7 @@ public class Ball : MonoBehaviour
         FollowCamera camera = GameObject.Find("Main Camera").GetComponent<FollowCamera>();
         camera.BallRT = gameObject.GetComponent<RectTransform>();
         camera.ChangeState(FollowCamera.CAMERASTATE.FOLLOWING);
-
+        SR = GetComponent<SpriteRenderer>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         AM = GM.GetComponent<AudioSource>();
         fRadius = GetComponent<CircleCollider2D>().radius;
@@ -48,6 +59,11 @@ public class Ball : MonoBehaviour
         fBouncePower *= Time.fixedDeltaTime;
         fMoveSpeed *= Time.fixedDeltaTime;
         fHitPower *= Time.fixedDeltaTime;
+
+        if (UsingSkin != null)
+            GetComponent<SpriteRenderer>().sprite = UsingSkin;
+
+        E = AfterImage; // 임시
     }
 
     private void FixedUpdate()
@@ -65,9 +81,11 @@ public class Ball : MonoBehaviour
             case STATE.LIVE:
                 Gravitypull();
                 Move();
+                E?.Invoke();
                 break;
             case STATE.WEIGHTLESS:
                 WeightlessMove();
+                E?.Invoke();
                 break;
             case STATE.DEAD:
                 break;
@@ -89,38 +107,51 @@ public class Ball : MonoBehaviour
                 fXVelocity = XVelo;
                 fYVelocity = YVelo;
                 break;
-            case STATE.DEAD:                
+            case STATE.DEAD:
                 Dead();
                 break;
         }
     }
 
+    public void ChangeBallEffect(int i)
+    {
+        Effect Temp = null;
+        switch(i)
+        {
+            case 0:
+                Temp = AfterImage;
+                break;
+        }
+
+        E = Temp;
+    }
+
     private void Move()
     {
-//#if UNITY_ANDROID
-//        if (Input.GetMouseButton(0))
-//        {
-//            Vector3 TouchPos = GM.camera.ScreenToWorldPoint(Input.mousePosition);
-//            if (TouchPos.x < GM.MainCameraTr.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-//                fXVelocity -= fMoveSpeed;
-//            if (TouchPos.x > GM.MainCameraTr.position.x && fXVelocity < fMaxXVelocity)
-//                fXVelocity += fMoveSpeed;
-//        }
-//#elif UNITY_IOS
-//        if (Input.GetMouseButton(0))
-//        {
-//            Vector3 TouchPos = GM.camera.ScreenToWorldPoint(Input.mousePosition);
-//            if (TouchPos.x < GM.MainCameraTr.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-//                fXVelocity -= fMoveSpeed;
-//            if (TouchPos.x > GM.MainCameraTr.position.x && fXVelocity < fMaxXVelocity)
-//                fXVelocity += fMoveSpeed;
-//        }
-//#else
-        if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-            fXVelocity -= fMoveSpeed;
-        if (Input.GetKey(KeyCode.D) && fXVelocity < fMaxXVelocity)
-            fXVelocity += fMoveSpeed;
-//#endif
+        //#if UNITY_ANDROID
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 TouchPos = GM.camera1.ScreenToWorldPoint(Input.mousePosition);
+            if (TouchPos.x < transform.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
+                fXVelocity -= fMoveSpeed;
+            if (TouchPos.x > transform.position.x && fXVelocity < fMaxXVelocity)
+                fXVelocity += fMoveSpeed;
+        }
+        //#elif UNITY_IOS
+        //        if (Input.GetMouseButton(0))
+        //        {
+        //            Vector3 TouchPos = GM.camera1.ScreenToWorldPoint(Input.mousePosition);
+        //            if (TouchPos.x < transform.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
+        //                fXVelocity -= fMoveSpeed;
+        //            if (TouchPos.x > transform.position.x && fXVelocity < fMaxXVelocity)
+        //                fXVelocity += fMoveSpeed;
+        //        }
+        //#else
+        //        if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
+        //            fXVelocity -= fMoveSpeed;
+        //        if (Input.GetKey(KeyCode.D) && fXVelocity < fMaxXVelocity)
+        //            fXVelocity += fMoveSpeed;
+        //#endif
         if (fXVelocity > fDecreaseXVelocity) // 항상 X축 속도 감소
             fXVelocity -= fDecreaseXVelocity;
         else if (fXVelocity < -fDecreaseXVelocity)
@@ -168,5 +199,21 @@ public class Ball : MonoBehaviour
         GM.DelayAndReset(); // Test시 비활성화
 
         Destroy(gameObject);
+    }
+
+    public void AfterImage()
+    {
+        fTime += Time.smoothDeltaTime;
+
+        if (fTime >= ShowCycle)
+        {
+            fTime -= ShowCycle;
+
+            SpriteRenderer obj = Instantiate(BallForEffect).GetComponent<SpriteRenderer>();
+            obj.sprite = SR.sprite;
+            obj.transform.SetParent(GM.StageTR);
+            obj.transform.position = transform.position;
+            obj.transform.rotation = gameObject.transform.rotation;
+        }
     }
 }
