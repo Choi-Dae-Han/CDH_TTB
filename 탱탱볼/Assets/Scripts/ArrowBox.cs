@@ -15,7 +15,7 @@ public class ArrowBox : MonoBehaviour
     [SerializeField] private AudioClip SE_Wall;
     private AudioSource AM;
 
-    private void Start()
+    private void Awake()
     {
         fWeightlessSpeed *= Time.fixedDeltaTime;
         AM = GameObject.Find("GameManager").GetComponent<AudioSource>();

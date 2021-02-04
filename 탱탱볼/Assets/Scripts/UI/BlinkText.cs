@@ -7,7 +7,7 @@ public class BlinkText : MonoBehaviour
     TMPro.TMP_Text T;
     bool isBright = false;
 
-    void Start()
+    private void Awake()
     {
         T = GetComponent<TMPro.TMP_Text>();
     }

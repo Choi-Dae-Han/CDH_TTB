@@ -26,7 +26,7 @@ public class BoxBase_Idle : MonoBehaviour
     private AudioSource AM;
     public GameObject Effect;
 
-    private void Start()
+    private void Awake()
     {
         SwitchDir();
         AM = GameObject.Find("GameManager").GetComponent<AudioSource>();

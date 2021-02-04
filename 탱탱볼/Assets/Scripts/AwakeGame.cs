@@ -13,7 +13,7 @@ public class AwakeGame : MonoBehaviour
     [SerializeField] private float fSpeed = 0.5f;
     private GameManager GM;
 
-    private void Start()
+    private void Awake()
     {
         Text1.alpha = 0.0f;
         Text2.alpha = 0.0f;

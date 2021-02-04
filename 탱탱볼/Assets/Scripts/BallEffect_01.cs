@@ -7,7 +7,7 @@ public class BallEffect_01 : MonoBehaviour
     public float DisappearSpeed = 0f;
     SpriteRenderer SR;
 
-    private void Start()
+    private void Awake()
     {
         SR = gameObject.GetComponent<SpriteRenderer>();
         SR.color -= new Color(0f, 0f, 0f, 0.8f);

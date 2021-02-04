@@ -6,7 +6,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private AudioClip TeleportSound = null;
     private AudioSource AM;
 
-    private void Start()
+    private void Awake()
     {
         AM = GameObject.Find("GameManager").GetComponent<AudioSource>();
     }

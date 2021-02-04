@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeUI : MonoBehaviour
 {
-    void Start()
+    private void Awake()
     {
         GameObject.Find("GameManager").GetComponent<GameManager>().TimeText = GetComponent<Text>();
     }

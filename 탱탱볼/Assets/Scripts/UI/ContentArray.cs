@@ -7,7 +7,7 @@ public class ContentArray : MonoBehaviour
     [SerializeField] private float fFirstInterval = 80f;
     [SerializeField] private float fInterval = 10f;
 
-    private void Start()
+    private void Awake()
     {
         RectTransform RT = GetComponent<RectTransform>();
         float ButtonHeight = StageButtonList[0].GetComponent<RectTransform>().rect.height;

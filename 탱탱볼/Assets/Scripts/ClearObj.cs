@@ -23,7 +23,7 @@ public class ClearObj : MonoBehaviour
     public Vector2 FirstCoinPos = Vector2.zero;
     public Vector2 SecondCoinPos = Vector2.zero;
 
-    void Start()
+    private void Awake()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         AM = GM.GetComponent<AudioSource>();

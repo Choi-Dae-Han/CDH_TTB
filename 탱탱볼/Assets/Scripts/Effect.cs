@@ -12,7 +12,7 @@ public class Effect : MonoBehaviour
     [SerializeField] private float fDeleteEffectTime = 0.0f;
     private float fTime = 0.0f;
 
-    private void Start()
+    private void Awake()
     {
         ChangeState(STATE.SHOW);
     }

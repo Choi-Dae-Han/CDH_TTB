@@ -43,14 +43,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
         camera1 = MainCameraTr.gameObject.GetComponent<Camera>();
-        //var jsonData = JE.LoadJsonFile<GameManager>(Application.dataPath, "PlayerInfo", path);
-        //nOwnedCoin = jsonData.nOwnedCoin;
-
     }
 
     void Update()
@@ -224,6 +217,7 @@ public class GameManager : MonoBehaviour
             UsingWhiteScreen.transform.SetParent(MainScreenTr);
             UsingWhiteScreen.GetComponent<RectTransform>().sizeDelta = MainScreenTr.sizeDelta;
             UsingWhiteScreen.transform.localPosition = Vector3.zero;
+            UsingWhiteScreen.transform.localScale = Vector3.one;
         }
     }
 

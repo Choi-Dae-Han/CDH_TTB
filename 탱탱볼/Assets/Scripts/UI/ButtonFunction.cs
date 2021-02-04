@@ -27,9 +27,8 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     GameManager GM;
     Vector2 ButtonScale = Vector2.zero;
 
-    private void Start()
+    private void Awake()
     {
-
         GameObject GM_Obj = GameObject.Find("GameManager");
         AM = GM_Obj.GetComponent<AudioSource>();
         GM = GM_Obj.GetComponent<GameManager>();
@@ -114,6 +113,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             UsingUI.GetComponent<ChildUI>().ParentButton = gameObject;
             UsingUI.transform.SetParent(ContentRT);
             UsingUI.transform.localPosition = ContentRT.rect.center;
+            UsingUI.transform.localScale = Vector3.one;
         }
     }
 
@@ -140,6 +140,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             UsingUI = Instantiate(UI);
             UsingUI.transform.SetParent(transform.root);
             UsingUI.transform.localPosition = Vector3.zero;
+            UsingUI.transform.localScale = Vector3.one;
         }
     }
 
@@ -149,8 +150,8 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {
             GM.ClearChild(StageListRT);
             UsingUI = Instantiate(UI);
-            UsingUI.transform.SetParent(StageListRT);
-            UsingUI.transform.localPosition = Vector3.zero;
+            UsingUI.transform.position = StageListRT.position;
+            UsingUI.transform.localScale = Vector3.one;
         }
     }
 
@@ -197,6 +198,8 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             UsingUI = Instantiate(UI);
             UsingUI.transform.SetParent(transform.root);
             UsingUI.transform.position = Vector3.zero;
+            UsingUI.transform.localPosition = Vector3.one;
+            UsingUI.transform.localScale = Vector3.one;
 
             GoodsInfo GI = UsingUI.GetComponent<GoodsInfo>();
             GI.GoodsImage.texture = gameObject.transform.GetChild(0).GetComponent<RawImage>().texture;

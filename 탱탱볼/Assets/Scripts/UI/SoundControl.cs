@@ -9,8 +9,8 @@ public class SoundControl : MonoBehaviour
     private GameManager GM;
     private AudioSource AM;
     private Slider S;
-    
-    private void Start()
+
+    private void Awake()
     {
         S = GetComponent<Slider>();
         GameObject obj = GameObject.Find("GameManager");

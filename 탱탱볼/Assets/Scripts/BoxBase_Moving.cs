@@ -53,7 +53,7 @@ public class BoxBase_Moving : MonoBehaviour
 
     public GameObject Effect;
 
-    private void Start()
+    private void Awake()
     {
         SwitchDir();
         AM = GameObject.Find("GameManager").GetComponent<AudioSource>();

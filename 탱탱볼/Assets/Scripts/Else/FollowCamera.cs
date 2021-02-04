@@ -23,7 +23,7 @@ public class FollowCamera : MonoBehaviour
     public Vector3 GoingTarget = Vector3.zero;
     [SerializeField] private Transform BackGround;
 
-    void Start()
+    private void Awake()
     {
         GoingTarget.z = -100f;
     }

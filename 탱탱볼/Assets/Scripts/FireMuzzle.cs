@@ -17,7 +17,7 @@ public class FireMuzzle : MonoBehaviour
     [SerializeField] private AudioSource AM;
     [SerializeField] private AudioClip SoundEffect;
 
-    private void Start()
+    private void Awake()
     {
         AM = GameObject.Find("GameManager").GetComponent<AudioSource>();
         ProjSpeed *= Time.fixedDeltaTime;

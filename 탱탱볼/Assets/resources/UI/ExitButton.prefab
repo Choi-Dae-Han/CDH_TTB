@@ -158,16 +158,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 8765030889207985292, guid: ae00b1977a623b4498ff18765dd5a5ab, type: 3}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  stage: {fileID: 0}
 --- !u!82 &6333818905610646308
 AudioSource:
   m_ObjectHideFlags: 0

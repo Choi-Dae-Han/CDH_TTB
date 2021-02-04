@@ -7,7 +7,7 @@ public class ClearUI : MonoBehaviour
     public GameObject NextStageButton;
     public Vector3 NextStageButtonPos = new Vector3(140f, -120f, 0f);
 
-    void Awake()
+    private void Awake()
     {
         GameManager GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (GM.OnStage.GetComponent<Stage>().NextStage != null)

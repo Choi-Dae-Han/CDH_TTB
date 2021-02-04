@@ -10,7 +10,7 @@ public class AddScoreObj : MonoBehaviour
     private AudioSource AM;
     public AudioClip SoundEffect;
 
-    private void Start()
+    private void Awake()
     {
         fMoveSpeed *= Time.fixedDeltaTime;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();

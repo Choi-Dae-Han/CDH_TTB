@@ -6,7 +6,7 @@ public class ShowOwnedCoin : MonoBehaviour
 {
     public TMPro.TMP_Text textt;
 
-    void Start()
+    private void Awake()
     {
         textt.text = GameObject.Find("GameManager").GetComponent<GameManager>().nOwnedCoin + "";
     }

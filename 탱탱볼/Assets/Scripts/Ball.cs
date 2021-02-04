@@ -43,7 +43,7 @@ public class Ball : MonoBehaviour
     private AudioSource AM;
     private GameManager GM;
 
-    private void Start()
+    private void Awake()
     {
         FollowCamera camera = GameObject.Find("Main Camera").GetComponent<FollowCamera>();
         camera.BallRT = gameObject.GetComponent<RectTransform>();

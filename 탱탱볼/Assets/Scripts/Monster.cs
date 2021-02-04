@@ -27,7 +27,7 @@ public class Monster : MonoBehaviour
     private Animator Ani;
     private Rigidbody2D RB;
 
-    private void Start()
+    private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
