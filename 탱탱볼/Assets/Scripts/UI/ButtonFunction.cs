@@ -198,7 +198,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             UsingUI = Instantiate(UI);
             UsingUI.transform.SetParent(transform.root);
             UsingUI.transform.position = Vector3.zero;
-            UsingUI.transform.localPosition = Vector3.one;
+            UsingUI.transform.localPosition = Vector3.zero;
             UsingUI.transform.localScale = Vector3.one;
 
             GoodsInfo GI = UsingUI.GetComponent<GoodsInfo>();

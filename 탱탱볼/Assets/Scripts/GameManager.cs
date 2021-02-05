@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject Ball_Obj;
     public GameObject PauseUI;
     public GameObject ClearUI;
-    public GameObject InStageUI;
+    public GameObject PauseButtonUI;
+    public GameObject TimeUI;
     public GameObject UsingUI;
     public GameObject TitleMenu;
     public GameObject StageMenu;
@@ -144,7 +145,11 @@ public class GameManager : MonoBehaviour
             GameObject.Find("Ball(Clone)").tag = "Untagged";
         ClearChild(StageTR);
         ChangeGameState(GAMESTATE.PLAYING);
-        CreateUI(InStageUI, Vector3.zero);
+        CreateUI(PauseButtonUI, Vector3.zero);
+        GameObject Temp = CreateUI(PauseButtonUI, Vector3.zero);
+        GameObject Temp1 = CreateUI(TimeUI, Vector3.zero);
+        Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(-130f, -80f);
+        Temp1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -80f);
         ClearChild(MainCameraTr);
         nAddScoreObj = 0;
         OnStage = Instantiate(PlayingStage);
@@ -258,7 +263,11 @@ public class GameManager : MonoBehaviour
             if (GameObject.Find("Ball(Clone)") != null)
                 GameObject.Find("Ball(Clone)").tag = "Untagged";
             ChangeGameState(GAMESTATE.PLAYING);
-            CreateUI(InStageUI, Vector3.zero);
+            GameObject Temp = CreateUI(PauseButtonUI, Vector3.zero);
+            GameObject Temp1 = CreateUI(TimeUI, Vector3.zero);
+            Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(-130f, -80f);
+            Temp1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -80f);
+            TimeText = Temp1.GetComponent<Text>();
             OnStage = Instantiate(PlayingStage);
             OnStage.transform.SetParent(StageTR);
             OnStage.transform.localPosition = Vector3.zero;
