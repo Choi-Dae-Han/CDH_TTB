@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject OnStage;
     public RectTransform MainScreenTr;
     public Transform MainCameraTr;
+    public Transform ObjectUIScreenTr;
     public Camera camera1;
     public Transform StageTR;
     public Text TimeText;
@@ -145,7 +146,6 @@ public class GameManager : MonoBehaviour
             GameObject.Find("Ball(Clone)").tag = "Untagged";
         ClearChild(StageTR);
         ChangeGameState(GAMESTATE.PLAYING);
-        CreateUI(PauseButtonUI, Vector3.zero);
         GameObject Temp = CreateUI(PauseButtonUI, Vector3.zero);
         GameObject Temp1 = CreateUI(TimeUI, Vector3.zero);
         Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(-130f, -80f);

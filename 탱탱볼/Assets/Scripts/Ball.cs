@@ -129,23 +129,10 @@ public class Ball : MonoBehaviour
     private void Move()
     {
         //#if UNITY_ANDROID
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 TouchPos = GM.camera1.ScreenToWorldPoint(Input.mousePosition);
-            if (TouchPos.x < transform.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-                fXVelocity -= fMoveSpeed;
-            if (TouchPos.x > transform.position.x && fXVelocity < fMaxXVelocity)
-                fXVelocity += fMoveSpeed;
-        }
+        TouchInput();
         //#elif UNITY_IOS
         //        if (Input.GetMouseButton(0))
-        //        {
-        //            Vector3 TouchPos = GM.camera1.ScreenToWorldPoint(Input.mousePosition);
-        //            if (TouchPos.x < transform.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-        //                fXVelocity -= fMoveSpeed;
-        //            if (TouchPos.x > transform.position.x && fXVelocity < fMaxXVelocity)
-        //                fXVelocity += fMoveSpeed;
-        //        }
+        //TouchInput();
         //#else
         //        if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
         //            fXVelocity -= fMoveSpeed;
@@ -214,6 +201,18 @@ public class Ball : MonoBehaviour
             obj.transform.SetParent(GM.StageTR);
             obj.transform.position = transform.position;
             obj.transform.rotation = gameObject.transform.rotation;
+        }
+    }
+
+    public void TouchInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 TouchPos = GM.camera1.ScreenToWorldPoint(Input.mousePosition);
+            if (TouchPos.x < transform.position.x && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
+                fXVelocity -= fMoveSpeed;
+            if (TouchPos.x > transform.position.x && fXVelocity < fMaxXVelocity)
+                fXVelocity += fMoveSpeed;
         }
     }
 }

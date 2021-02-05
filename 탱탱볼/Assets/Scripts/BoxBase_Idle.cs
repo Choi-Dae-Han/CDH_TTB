@@ -29,7 +29,8 @@ public class BoxBase_Idle : MonoBehaviour
     private void Awake()
     {
         SwitchDir();
-        AM = GameObject.Find("GameManager").GetComponent<AudioSource>();
+        GameObject GM = GameObject.Find("GameManager");
+        AM = GM.GetComponent<AudioSource>();
 
         if (!bArrowBox) fAddBouncePower *= Time.fixedDeltaTime;
         else
@@ -47,7 +48,11 @@ public class BoxBase_Idle : MonoBehaviour
             Dir.Normalize();
         }
 
-        if (bDestroyable) ShowNum.text = nDestroyCount - nCrashedCount + "";
+        if (bDestroyable)
+        {
+            transform.SetParent(GM.GetComponent<GameManager>().ObjectUIScreenTr);
+            ShowNum.text = nDestroyCount - nCrashedCount + "";
+        }
     }
 
     void SwitchDir()
