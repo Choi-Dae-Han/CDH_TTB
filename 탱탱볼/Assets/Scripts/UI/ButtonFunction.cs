@@ -22,10 +22,16 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public Texture2D BGIofButton;
     public RectTransform ContentRT;
     public RectTransform StageListRT;
+    public string FileName;
     public Stage stage;
+    public Shop shop;
     AudioSource AM;
     GameManager GM;
     Vector2 ButtonScale = Vector2.zero;
+
+    [SerializeField] private Text GoodsName;
+    [SerializeField] private int MoneyPrice;
+    [SerializeField] private int CoinPrice;
 
     private void Awake()
     {
@@ -109,6 +115,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 .ChangeButtonState(BUTTONSTATE.UNLOCK);
             ChangeButtonState(BUTTONSTATE.SELECTEDLOCK);
             GM.ClearChild(ContentRT);
+            ContentRT.transform.localPosition = Vector3.zero;
             UsingUI = Instantiate(UI);
             UsingUI.GetComponent<ChildUI>().ParentButton = gameObject;
             UsingUI.transform.SetParent(ContentRT);
@@ -160,6 +167,14 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         GM.LoadStage(stage.gameObject);
     }
 
+    public void LoadShopStage()
+    {
+        Ball Temp = GM.Ball_Obj_Shop.GetComponent<Ball>();
+        if (shop.ShopBallSprite != null)Temp.SR.sprite = shop.ShopBallSprite;
+        if (shop.ShopBallSE != null) Temp.BounceSound = shop.ShopBallSE;
+        if (shop.ShopBallEffect != null) Temp.Effect = shop.ShopBallEffect;
+        GM.LoadShopStage();
+    }
     public void PauseGame()
     {
         GM.Pause();
@@ -175,19 +190,28 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         BGI.texture = BGIofButton;
     }
 
-    public void ChangeBallEffect(int i)
+    public void ChangeBallEffect(GameObject obj)
     {
-        GM.Ball_Obj.GetComponent<Ball>().ChangeBallEffect(i);
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
+        data.Effect = obj;
+        string jsonData = DataManager.ObjectToJson(data);
+        DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
     }
 
     public void ChangeBallSkin(Sprite ballSkin)
     {
-        GM.Ball_Obj.GetComponent<Ball>().UsingSkin = ballSkin;
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
+        data.Skin = ballSkin;
+        string jsonData = DataManager.ObjectToJson(data);
+        DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
     }
 
-    public void ChangeBallSE(AudioClip SE)
+    public void ChangeBallSE(AudioClip se)
     {
-        GM.Ball_Obj.GetComponent<Ball>().BounceSound = SE;
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
+        data.SE = se;
+        string jsonData = DataManager.ObjectToJson(data);
+        DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
     }
 
     public void ShowGoodsInfo()
@@ -202,7 +226,10 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             UsingUI.transform.localScale = Vector3.one;
 
             GoodsInfo GI = UsingUI.GetComponent<GoodsInfo>();
+            GI.GoodsName.text = GoodsName.text;
             GI.GoodsImage.texture = gameObject.transform.GetChild(0).GetComponent<RawImage>().texture;
+            GI.CoinPrice.text = CoinPrice + "";
+            GI.MoneyPrice.text = MoneyPrice + "";
         }
     }
 

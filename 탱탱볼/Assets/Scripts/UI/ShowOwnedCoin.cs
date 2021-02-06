@@ -8,6 +8,7 @@ public class ShowOwnedCoin : MonoBehaviour
 
     private void Awake()
     {
-        textt.text = GameObject.Find("GameManager").GetComponent<GameManager>().nOwnedCoin + "";
+        var data = DataManager.LoadJsonFile<PlayerData>(Application.dataPath, "PlayerData", "/JsonData/Player/");
+        textt.text = data.OwnedCoin + "";
     }
 }

@@ -4,25 +4,36 @@ using UnityEngine;
 
 public class BallEffect_01 : MonoBehaviour
 {
-    public float DisappearSpeed = 0f;
-    SpriteRenderer SR;
+    public float fTime = 0f;
+    public float ShowCycle = 0.15f;
+    public GameObject BallForEffect;
+    Sprite Skin;
+    Ball ball;
 
     private void Awake()
     {
-        SR = gameObject.GetComponent<SpriteRenderer>();
-        SR.color -= new Color(0f, 0f, 0f, 0.8f);
-        DisappearSpeed *= Time.fixedDeltaTime;
+        ball = transform.parent.GetComponent<Ball>();
+        Skin = ball.SR.sprite;
     }
 
     void Update()
     {
-        Disappear();
+        AfterImage();
     }
 
-    void Disappear()
+    public void AfterImage()
     {
-        SR.color -= new Color(0f, 0f, 0f, DisappearSpeed);
+        fTime += Time.smoothDeltaTime;
 
-        if (SR.color.a <= 0f) Destroy(gameObject);
+        if (fTime >= ShowCycle)
+        {
+            fTime -= ShowCycle;
+
+            SpriteRenderer obj = Instantiate(BallForEffect).GetComponent<SpriteRenderer>();
+            obj.sprite = Skin;
+            obj.transform.SetParent(ball.GM.StageTR);
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
+        }
     }
 }

@@ -8,7 +8,8 @@ public class BackGround : MonoBehaviour
     private void Awake()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        if (GM.gamestate == GameManager.GAMESTATE.PLAYING)
+        if (GM.gamestate == GameManager.GAMESTATE.PLAYING ||
+            GM.gamestate == GameManager.GAMESTATE.SHOPSTAGE)
         {
             float XRatio = GM.MainScreenTr.sizeDelta.x / 1280f;
             float YRatio = GM.MainScreenTr.sizeDelta.y / 720f;

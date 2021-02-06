@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public enum GAMESTATE
     {
-        CREATE, TITLEMENU, STAGEMENU, SHOP, PLAYING, CLEAR
+        CREATE, TITLEMENU, STAGEMENU, SHOP, SHOPSTAGE, PLAYING, CLEAR
     }
     public GAMESTATE gamestate = GAMESTATE.CREATE;
 
@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     public int Coins = 0;
 
     public GameObject Ball_Obj;
+    public GameObject Ball_Obj_Shop;
     public GameObject PauseUI;
+    public GameObject BackButtonUI;
     public GameObject ClearUI;
     public GameObject PauseButtonUI;
     public GameObject TimeUI;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject WhiteScreen;
     public GameObject UsingWhiteScreen;
     public GameObject PlayingStage;
+    public GameObject ShopStage;
     public GameObject OnStage;
     public RectTransform MainScreenTr;
     public Transform MainCameraTr;
@@ -38,7 +41,6 @@ public class GameManager : MonoBehaviour
     public Transform StageTR;
     public Text TimeText;
 
-    public int nOwnedCoin = 0;
     public int nScore = 0;
     public int nAddScoreObj = 0;
 
@@ -64,6 +66,8 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.STAGEMENU:
                 break;
             case GAMESTATE.SHOP:
+                break;
+            case GAMESTATE.SHOPSTAGE:
                 break;
             case GAMESTATE.PLAYING:
                 CountTime(); // Test에서는 주석처리
@@ -92,7 +96,16 @@ public class GameManager : MonoBehaviour
                 CreateUI(StageMenu, Vector3.zero);
                 break;
             case GAMESTATE.SHOP:
+                StopAllCoroutines();
+                ClearChild(MainCameraTr);
+                if (GameObject.Find("Ball_Shop(Clone)") != null)
+                    GameObject.Find("Ball_Shop(Clone)").tag = "Untagged";
+                ClearChild(StageTR);
                 CreateUI(ShopMenu, Vector3.zero);
+                MainCameraTr.position = new Vector3(0f, 0f, -100f);
+                MainCameraTr.gameObject.GetComponent<FollowCamera>().GoingTarget = new Vector3(0f, 0f, -100f);
+                break;
+            case GAMESTATE.SHOPSTAGE:
                 break;
             case GAMESTATE.PLAYING:
                 ClearChild(StageTR);
@@ -169,8 +182,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitStage()
     {
-        StopAllCoroutines();
-        if(GameObject.Find("Ball(Clone)") != null)
+        if (GameObject.Find("Ball(Clone)") != null)
             GameObject.Find("Ball(Clone)").tag = "Untagged";
         ClearChild(StageTR);
         ClearChild(MainCameraTr);
@@ -241,16 +253,21 @@ public class GameManager : MonoBehaviour
         if (nMin * 60 + fSec < s.fLimitTime) tempScore++;
         if (tempScore > s.GotCoins)
         {
-            nOwnedCoin += tempScore - s.GotCoins;
             nScore = tempScore - s.GotCoins;
             s.GotCoins = tempScore;
             s.SaveStageData(s.Opened, s.GotCoins, s.Cleared);
+
+            var data = DataManager.LoadJsonFile<PlayerData>(Application.dataPath, "PlayerData", "/JsonData/Player/");
+            data.OwnedCoin += nScore;
+            string jsonData = DataManager.ObjectToJson(data);
+            DataManager.CreateJsonFile(Application.dataPath, "PlayerData", "/JsonData/Player/", jsonData);
         }
         s.LoadStageData(s.AreaName, s.StageNum);
         if (s.NextStage != null)
             s.OpenNextStage();
         else
             s.OpenNextArea();
+
         clearObj.ChangeState(ClearObj.STATE.MOVE);
     }
 
@@ -275,6 +292,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadShopStage()
+    {
+        ChangeGameState(GAMESTATE.SHOPSTAGE);
+        GameObject Temp = CreateUI(BackButtonUI, Vector3.zero);
+        Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(130f, -130f);
+        OnStage = Instantiate(ShopStage);
+        OnStage.transform.SetParent(StageTR);
+        OnStage.transform.localPosition = Vector3.zero;
+        CreateObject(Ball_Obj_Shop, Vector3.zero, StageTR);
+
+    }
+
     public void ChangeVolume(float soundScale)
     {
         GetComponent<AudioSource>().volume = soundScale;
@@ -287,19 +316,31 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DelayAndReset_Cor()
     {
+        if (gamestate != GAMESTATE.PLAYING &&
+            gamestate != GAMESTATE.SHOPSTAGE)
+            yield break;
+
         float TempTime = 0f;
         while(true)
         {
             TempTime += Time.smoothDeltaTime;
-            if(gamestate != GAMESTATE.PLAYING)
-                yield break;
-            else if (TempTime > fResetTime)
+            if (TempTime > fResetTime)
             {
-                ResetTime();
                 ClearChild(StageTR);
                 ClearChild(MainCameraTr);
-                CreateObject(PlayingStage.gameObject, Vector3.zero, StageTR);
-                CreateObject(Ball_Obj, Vector3.zero, StageTR);
+
+                switch(gamestate)
+                {
+                    case GAMESTATE.PLAYING:
+                        ResetTime();
+                        CreateObject(PlayingStage.gameObject, Vector3.zero, StageTR);
+                        CreateObject(Ball_Obj, Vector3.zero, StageTR);
+                        break;
+                    case GAMESTATE.SHOPSTAGE:
+                        CreateObject(ShopStage, Vector3.zero, StageTR);
+                        CreateObject(Ball_Obj_Shop, Vector3.zero, StageTR);
+                        break;
+                }
                 yield break;
             }
             yield return null;

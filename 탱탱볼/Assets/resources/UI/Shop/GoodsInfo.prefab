@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -155,16 +155,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  FileName: 
+  stage: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &896884731094852149
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -444,16 +447,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  FileName: 
+  stage: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &3936142151157380106
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -808,16 +814,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  FileName: 
+  stage: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &4318535013933739275
 GameObject:
   m_ObjectHideFlags: 0

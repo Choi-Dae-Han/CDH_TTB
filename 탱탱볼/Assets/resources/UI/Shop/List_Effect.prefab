@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 100}
+  m_AnchoredPosition: {x: -200, y: 100}
   m_SizeDelta: {x: 100, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3929838731426760848
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -234,16 +234,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 2611881093647151224, guid: 7b0d9c7572a24e340aeb1de2473185b7, type: 3}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 5000033715561169898, guid: 579f43dd19dca9c49a3e126268d143a3, type: 3}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  FileName: 
+  stage: {fileID: 0}
+  GoodsName: {fileID: 4902553659688460578}
+  MoneyPrice: 1500
+  CoinPrice: 500
 --- !u!1 &4826072726114842587
 GameObject:
   m_ObjectHideFlags: 0

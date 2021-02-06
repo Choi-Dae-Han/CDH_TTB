@@ -24,24 +24,18 @@ public class Ball : MonoBehaviour
     public bool TopCrashed = false;
     public bool BottomCrashed = false;
 
-    //Effect
-    public delegate void Effect();
-    public Effect E = null;
-    public float fTime = 0f;
-    public float ShowCycle = 0.15f;
-    public GameObject BallForEffect;
     [SerializeField] private GameObject DeadEffect;
-    SpriteRenderer SR;
+    public SpriteRenderer SR;
 
-    //Skin
-    public Sprite UsingSkin;
+    //Effect
+    public GameObject Effect;
 
     //Sound
     public AudioClip BounceSound;
     [SerializeField] private AudioClip DeadSound;
 
     private AudioSource AM;
-    private GameManager GM;
+    public GameManager GM;
 
     private void Awake()
     {
@@ -60,10 +54,15 @@ public class Ball : MonoBehaviour
         fMoveSpeed *= Time.fixedDeltaTime;
         fHitPower *= Time.fixedDeltaTime;
 
-        if (UsingSkin != null)
-            GetComponent<SpriteRenderer>().sprite = UsingSkin;
-
-        E = AfterImage; // 임시
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
+        if (data.Skin != null) SR.sprite = data.Skin;
+        if (data.SE != null) BounceSound = data.SE;
+        if (data.Effect != null)
+        {
+            Effect = Instantiate(data.Effect);
+            effect.transform.SetParent(gameObject.transform);
+            effect.transform.localPosition = Vector3.zero;
+        }
     }
 
     private void FixedUpdate()
@@ -81,11 +80,9 @@ public class Ball : MonoBehaviour
             case STATE.LIVE:
                 Gravitypull();
                 Move();
-                E?.Invoke();
                 break;
             case STATE.WEIGHTLESS:
                 WeightlessMove();
-                E?.Invoke();
                 break;
             case STATE.DEAD:
                 break;
@@ -113,25 +110,11 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public void ChangeBallEffect(int i)
-    {
-        Effect Temp = null;
-        switch(i)
-        {
-            case 0:
-                Temp = AfterImage;
-                break;
-        }
-
-        E = Temp;
-    }
-
     private void Move()
     {
         //#if UNITY_ANDROID
         TouchInput();
         //#elif UNITY_IOS
-        //        if (Input.GetMouseButton(0))
         //TouchInput();
         //#else
         //        if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
@@ -186,22 +169,6 @@ public class Ball : MonoBehaviour
         GM.DelayAndReset(); // Test시 비활성화
 
         Destroy(gameObject);
-    }
-
-    public void AfterImage()
-    {
-        fTime += Time.smoothDeltaTime;
-
-        if (fTime >= ShowCycle)
-        {
-            fTime -= ShowCycle;
-
-            SpriteRenderer obj = Instantiate(BallForEffect).GetComponent<SpriteRenderer>();
-            obj.sprite = SR.sprite;
-            obj.transform.SetParent(GM.StageTR);
-            obj.transform.position = transform.position;
-            obj.transform.rotation = gameObject.transform.rotation;
-        }
     }
 
     public void TouchInput()
