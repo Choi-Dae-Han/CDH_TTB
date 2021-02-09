@@ -164,8 +164,22 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 7688231827371088685, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
+    type: 3}
+  BuyButton: {fileID: 270201065672619522, guid: 408846185bbc03c4c81fa724233ed0ed,
+    type: 3}
+  ApplyButton: {fileID: 8822244601640575654, guid: eca2852e6f958d24e9ba91fce11ebd45,
+    type: 3}
+  GoodsImgTR: {fileID: 6988273615053997392}
+  SoldImg: {fileID: 3571427724943778083, guid: 76bfd7f7e45d03746be33d0eb0d881bb, type: 3}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 6019127218183248932, guid: b7da038f28041fe42ae065b774824ea5,
+    type: 3}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 8189055491493172478}
   MoneyPrice: 500
   CoinPrice: 100
@@ -908,8 +922,22 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 7688231827371088685, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
+    type: 3}
+  BuyButton: {fileID: 270201065672619522, guid: 408846185bbc03c4c81fa724233ed0ed,
+    type: 3}
+  ApplyButton: {fileID: 8822244601640575654, guid: eca2852e6f958d24e9ba91fce11ebd45,
+    type: 3}
+  GoodsImgTR: {fileID: 7393874662618873474}
+  SoldImg: {fileID: 3571427724943778083, guid: 76bfd7f7e45d03746be33d0eb0d881bb, type: 3}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 8907743571200264545, guid: 66e7efff73d6e5e448567c403286d0f6,
+    type: 3}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 3162158613332215574}
   MoneyPrice: 500
   CoinPrice: 100
@@ -1299,8 +1327,22 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 7688231827371088685, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
+    type: 3}
+  BuyButton: {fileID: 270201065672619522, guid: 408846185bbc03c4c81fa724233ed0ed,
+    type: 3}
+  ApplyButton: {fileID: 8822244601640575654, guid: eca2852e6f958d24e9ba91fce11ebd45,
+    type: 3}
+  GoodsImgTR: {fileID: 624911746560733297}
+  SoldImg: {fileID: 3571427724943778083, guid: 76bfd7f7e45d03746be33d0eb0d881bb, type: 3}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 8429855687037233414, guid: 846c52b59e959f642be8deef44136ab8,
+    type: 3}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 3290426100046554180}
   MoneyPrice: 500
   CoinPrice: 100
@@ -1624,8 +1666,22 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 7688231827371088685, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
+    type: 3}
+  BuyButton: {fileID: 270201065672619522, guid: 408846185bbc03c4c81fa724233ed0ed,
+    type: 3}
+  ApplyButton: {fileID: 8822244601640575654, guid: eca2852e6f958d24e9ba91fce11ebd45,
+    type: 3}
+  GoodsImgTR: {fileID: 8744299212609506950}
+  SoldImg: {fileID: 3571427724943778083, guid: 76bfd7f7e45d03746be33d0eb0d881bb, type: 3}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 6779085838100780416, guid: 4a9f9fa61f8550545bb3ed5bf485f8fe,
+    type: 3}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 3581840952627526177}
   MoneyPrice: 500
   CoinPrice: 100

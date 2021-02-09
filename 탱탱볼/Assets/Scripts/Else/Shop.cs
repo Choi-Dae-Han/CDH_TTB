@@ -12,6 +12,9 @@ public class Shop : MonoBehaviour
     public Sprite ShopBallSprite;
     public AudioClip ShopBallSE;
     public GameObject ShopBallEffect;
+    public Image BGIofShopBallSprite;
+    public Image BGIofShopBallSE;
+    public Image BGIofShopBallEffect;
 
     private void Awake()
     {

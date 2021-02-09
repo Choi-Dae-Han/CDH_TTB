@@ -104,23 +104,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   fGravityScale: 6.25
-  fMoveSpeed: 6
+  fMoveSpeed: 5
   fBouncePower: 430
   fHitPower: 120
   fXVelocity: 0
   fYVelocity: 0
   fRadius: 0
-  fRotateSpeed: 2
+  fRotateSpeed: 2.2
   fMaxXVelocity: 200
   fMaxYVelocity: 800
-  fDecreaseXVelocity: 1.5
+  fDecreaseXVelocity: 1.2
   LeftCrashed: 0
   RightCrashed: 0
   TopCrashed: 0
   BottomCrashed: 0
+  ISMainGame: 1
   DeadEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   SR: {fileID: 0}
-  Effect: {fileID: 0}
+  BallEffect: {fileID: 0}
   BounceSound: {fileID: 8300000, guid: c827b1bfb3c83b84aa6e0a7e4cf7fdb3, type: 3}
   DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
   GM: {fileID: 0}

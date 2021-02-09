@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8248917464344050873}
   - component: {fileID: 8232803405402617063}
+  - component: {fileID: 4066294436287754974}
   - component: {fileID: 5385906602186606536}
   - component: {fileID: 5663510136973492169}
-  - component: {fileID: 4066294436287754974}
   m_Layer: 0
   m_Name: Ball_Shop
   m_TagString: Player
@@ -79,17 +79,52 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bceb16ce0cbccd4d96e6f2d0fd01b52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4e49b42016c14846bd7f22fa41812e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 25.6, y: 25.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4066294436287754974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213918199468246643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b792d456d2549e14587d69007d58cddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  fGravityScale: 6.25
+  fMoveSpeed: 5
+  fBouncePower: 430
+  fHitPower: 120
+  fXVelocity: 0
+  fYVelocity: 0
+  fRadius: 0
+  fRotateSpeed: 2.2
+  fMaxXVelocity: 200
+  fMaxYVelocity: 800
+  fDecreaseXVelocity: 1.2
+  LeftCrashed: 0
+  RightCrashed: 0
+  TopCrashed: 0
+  BottomCrashed: 0
+  ISMainGame: 0
+  DeadEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  SR: {fileID: 8232803405402617063}
+  BallEffect: {fileID: 0}
+  BounceSound: {fileID: 8300000, guid: c827b1bfb3c83b84aa6e0a7e4cf7fdb3, type: 3}
+  DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
+  GM: {fileID: 0}
 --- !u!58 &5385906602186606536
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,40 +162,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &4066294436287754974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4213918199468246643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b792d456d2549e14587d69007d58cddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  fGravityScale: 6.25
-  fMoveSpeed: 6
-  fBouncePower: 430
-  fHitPower: 120
-  fXVelocity: 0
-  fYVelocity: 0
-  fRadius: 0
-  fRotateSpeed: 0
-  fMaxXVelocity: 200
-  fMaxYVelocity: 800
-  fDecreaseXVelocity: 1.5
-  LeftCrashed: 0
-  RightCrashed: 0
-  TopCrashed: 0
-  BottomCrashed: 0
-  DeadEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
-  SR: {fileID: 8232803405402617063}
-  Effect: {fileID: 0}
-  BounceSound: {fileID: 8300000, guid: c827b1bfb3c83b84aa6e0a7e4cf7fdb3, type: 3}
-  DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
-  GM: {fileID: 0}
 --- !u!1 &8248917465293176760
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,23 +7,17 @@ public class BallEffect_01 : MonoBehaviour
     public float fTime = 0f;
     public float ShowCycle = 0.15f;
     public GameObject BallForEffect;
-    Sprite Skin;
-    Ball ball;
+    public Sprite Skin;
+    public Ball ball;
 
-    private void Awake()
-    {
-        ball = transform.parent.GetComponent<Ball>();
-        Skin = ball.SR.sprite;
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         AfterImage();
     }
 
     public void AfterImage()
     {
-        fTime += Time.smoothDeltaTime;
+        fTime += Time.fixedDeltaTime;
 
         if (fTime >= ShowCycle)
         {

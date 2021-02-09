@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5606272476043451407, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -527624351703087600, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -156,16 +156,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinUIPos: []
+  stage: {fileID: 0}
+  shop: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &6494524099986605995
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6161779487981338108, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: 2321843339481635706, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -333,16 +340,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinUIPos: []
+  stage: {fileID: 0}
+  shop: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &7774990768451266785
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2354599989249271683, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -5037419810449809271, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -885,9 +899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a42babac0475244b55e8d82235d754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Btn_Sound: {fileID: 3749690277163349949, guid: f5764b537d477e942a7e932abfb97430,
+  Btn_Sound: {fileID: -5037419810449809271, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
-  Btn_Mute: {fileID: -4310278103138944123, guid: f5764b537d477e942a7e932abfb97430,
+  Btn_Mute: {fileID: -5289150689307946710, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   Btn_Handle: {fileID: 8555968499037257202}
 --- !u!1 &8555968500137363081
@@ -1032,7 +1046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3111426065101565912, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -4119098633302612391, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1133,13 +1147,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  LockImg: {fileID: 0}
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
-  NextStageButton: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 0}
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinUIPos: []
+  stage: {fileID: 0}
+  shop: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0

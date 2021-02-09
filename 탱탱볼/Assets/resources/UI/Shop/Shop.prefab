@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 2570814935385469238}
   m_Father: {fileID: 50065343364154833}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
   UsingUI: {fileID: 0}
@@ -164,8 +165,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 7569751787164485474}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 7968199317822412129}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -276,7 +287,7 @@ RectTransform:
   - {fileID: 3743343687232499786}
   - {fileID: 8075077107511153194}
   m_Father: {fileID: 50065343364154833}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -347,7 +358,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2523620649585754308}
+  - {fileID: 1547632607244317203}
   m_Father: {fileID: 5253579432603728569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -408,6 +419,12 @@ MonoBehaviour:
   Text_Skin: {fileID: 2148677560196537210}
   Text_Effect: {fileID: 865277999450813059}
   Text_SoundEffect: {fileID: 880099032723434826}
+  ShopBallSprite: {fileID: 0}
+  ShopBallSE: {fileID: 0}
+  ShopBallEffect: {fileID: 0}
+  BGIofShopBallSprite: {fileID: 1348485622244539088}
+  BGIofShopBallSE: {fileID: 3689804712644588748}
+  BGIofShopBallEffect: {fileID: 1224920085085047908}
 --- !u!1 &1729874188464778792
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +457,7 @@ RectTransform:
   - {fileID: 817792660136306422}
   - {fileID: 6219598657579569541}
   m_Father: {fileID: 50065343364154833}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -516,7 +533,7 @@ RectTransform:
   - {fileID: 5100889737376411435}
   - {fileID: 7330212511904865660}
   m_Father: {fileID: 50065343364154833}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -926,6 +943,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1202585807559098956}
+        m_MethodName: ResetApply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1202585807559098956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
   UsingUI: {fileID: 0}
@@ -947,8 +976,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 7569751787164485474}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -1264,6 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 5295919418140358025, guid: 007d863fc4af10b4e948e831838f9677, type: 3}
   UsingUI: {fileID: 0}
@@ -1272,8 +1312,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 7569751787164485474}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -1433,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
   UsingUI: {fileID: 0}
@@ -1441,8 +1492,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 7569751787164485474}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -1602,6 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 1
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 8381897247372697555, guid: c5fb27cb1a9bb6f4092bba6858ff7cdb, type: 3}
   UsingUI: {fileID: 0}
@@ -1610,8 +1672,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 7569751787164485474}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -1681,7 +1753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5606272476043451407, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -527624351703087600, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1771,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
@@ -1779,8 +1852,18 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0
@@ -1965,6 +2048,185 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6592872837871961081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2615697873979142741}
+  - component: {fileID: 3829025265392816807}
+  - component: {fileID: 6460638517349243450}
+  - component: {fileID: 5094244031309834415}
+  - component: {fileID: 2464453399390875193}
+  m_Layer: 5
+  m_Name: Button_Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2615697873979142741
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592872837871961081}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 50065343364154833}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -360, y: -230}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3829025265392816807
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592872837871961081}
+  m_CullTransparentMesh: 0
+--- !u!114 &6460638517349243450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592872837871961081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 749690419860724048, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5094244031309834415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592872837871961081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 6460638517349243450}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2464453399390875193}
+        m_MethodName: UISound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7219cdb602da5fc439fb533cb54ae503,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2464453399390875193}
+        m_MethodName: ShowUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2464453399390875193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592872837871961081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonState: 2
+  goodsState: 0
+  UsingLockImg: {fileID: 0}
+  UI: {fileID: 0}
+  UsingUI: {fileID: 0}
+  OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
+  BGI: {fileID: 0}
+  BGIofButton: {fileID: 0}
+  ContentRT: {fileID: 0}
+  StageListRT: {fileID: 0}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
+  stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &6737967512644366160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2986,7 @@ RectTransform:
   - {fileID: 2717351532445665149}
   - {fileID: 3991221344017451852}
   - {fileID: 6363521910814757330}
+  - {fileID: 2615697873979142741}
   - {fileID: 2494416677018698748}
   - {fileID: 7384070975436743596}
   - {fileID: 507320248061731326}
@@ -2860,7 +3123,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uAE30\uBCF8"
---- !u!1001 &2471439508601531629
+--- !u!1001 &1455693023805627962
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2984,11 +3247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5fb27cb1a9bb6f4092bba6858ff7cdb, type: 3}
---- !u!224 &2523620649585754308 stripped
+--- !u!224 &1547632607244317203 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 92854580062792745, guid: c5fb27cb1a9bb6f4092bba6858ff7cdb,
     type: 3}
-  m_PrefabInstance: {fileID: 2471439508601531629}
+  m_PrefabInstance: {fileID: 1455693023805627962}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4466615786450640674
 PrefabInstance:

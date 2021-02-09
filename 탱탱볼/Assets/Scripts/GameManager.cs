@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject Ball_Obj;
     public GameObject Ball_Obj_Shop;
+    public Ball UsingBall_Obj_Shop;
     public GameObject PauseUI;
     public GameObject BackButtonUI;
     public GameObject ClearUI;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject TitleMenu;
     public GameObject StageMenu;
     public GameObject ShopMenu;
+    public GameObject UsingShopMenu;
     public GameObject WhiteScreen;
     public GameObject UsingWhiteScreen;
     public GameObject PlayingStage;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     public RectTransform MainScreenTr;
     public Transform MainCameraTr;
     public Transform ObjectUIScreenTr;
+    public Vector3 ResetCameraPos = new Vector3(0f, 0f, -100f);
     public Camera camera1;
     public Transform StageTR;
     public Text TimeText;
@@ -82,17 +85,17 @@ public class GameManager : MonoBehaviour
         if (gamestate == s) return;
         gamestate = s;
 
-        ClearChild(MainScreenTr);
-
         switch (s)
         {
             case GAMESTATE.CREATE:
                 break;
             case GAMESTATE.TITLEMENU:
+                ClearChild(MainScreenTr);
                 GameObject.Find("UI Camera").GetComponent<Camera>().clearFlags = CameraClearFlags.Depth;
                 CreateUI(TitleMenu, Vector3.zero);
                 break;
             case GAMESTATE.STAGEMENU:
+                ClearChild(MainScreenTr);
                 CreateUI(StageMenu, Vector3.zero);
                 break;
             case GAMESTATE.SHOP:
@@ -101,18 +104,24 @@ public class GameManager : MonoBehaviour
                 if (GameObject.Find("Ball_Shop(Clone)") != null)
                     GameObject.Find("Ball_Shop(Clone)").tag = "Untagged";
                 ClearChild(StageTR);
-                CreateUI(ShopMenu, Vector3.zero);
-                MainCameraTr.position = new Vector3(0f, 0f, -100f);
-                MainCameraTr.gameObject.GetComponent<FollowCamera>().GoingTarget = new Vector3(0f, 0f, -100f);
+                ClearChild(MainScreenTr);
+                if (UsingShopMenu == null) UsingShopMenu = CreateUI(ShopMenu, Vector3.zero);
+                else UsingShopMenu.transform.SetParent(MainScreenTr);
+                MainCameraTr.position = ResetCameraPos;
+                MainCameraTr.gameObject.GetComponent<FollowCamera>().GoingTarget = ResetCameraPos;
                 break;
             case GAMESTATE.SHOPSTAGE:
+                UsingShopMenu.transform.SetParent(null);
+                ClearChild(MainScreenTr);
                 break;
             case GAMESTATE.PLAYING:
+                ClearChild(MainScreenTr);
                 ClearChild(StageTR);
                 ClearChild(MainCameraTr);
                 StopAllCoroutines();
                 break;
             case GAMESTATE.CLEAR:
+                ClearChild(MainScreenTr);
                 break;
         }
     }
@@ -265,7 +274,7 @@ public class GameManager : MonoBehaviour
         s.LoadStageData(s.AreaName, s.StageNum);
         if (s.NextStage != null)
             s.OpenNextStage();
-        else
+        if (s.NextAreaName != "")
             s.OpenNextArea();
 
         clearObj.ChangeState(ClearObj.STATE.MOVE);
@@ -277,6 +286,8 @@ public class GameManager : MonoBehaviour
 
         if (PlayingStage != null)
         {
+            MainCameraTr.position = ResetCameraPos;
+            MainCameraTr.gameObject.GetComponent<FollowCamera>().GoingTarget = ResetCameraPos;
             if (GameObject.Find("Ball(Clone)") != null)
                 GameObject.Find("Ball(Clone)").tag = "Untagged";
             ChangeGameState(GAMESTATE.PLAYING);
@@ -292,7 +303,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadShopStage()
+    public void LoadShopStage(Sprite skin, AudioClip se, GameObject effect = null)
     {
         ChangeGameState(GAMESTATE.SHOPSTAGE);
         GameObject Temp = CreateUI(BackButtonUI, Vector3.zero);
@@ -300,8 +311,13 @@ public class GameManager : MonoBehaviour
         OnStage = Instantiate(ShopStage);
         OnStage.transform.SetParent(StageTR);
         OnStage.transform.localPosition = Vector3.zero;
-        CreateObject(Ball_Obj_Shop, Vector3.zero, StageTR);
 
+        Ball shopBall = Ball_Obj_Shop.GetComponent<Ball>();
+        shopBall.SR.sprite = skin;
+        shopBall.BounceSound = se;
+        shopBall.BallEffect = effect;
+
+        CreateObject(Ball_Obj_Shop, Vector3.zero, StageTR);
     }
 
     public void ChangeVolume(float soundScale)

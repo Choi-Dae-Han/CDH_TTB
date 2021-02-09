@@ -9,10 +9,11 @@ public class DisappearEffect : MonoBehaviour
 
     private void Awake()
     {
+        SR.color -= new Color(0f, 0f, 0f, 0.7f);
         DisappearSpeed *= Time.fixedDeltaTime;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Disappear();
     }

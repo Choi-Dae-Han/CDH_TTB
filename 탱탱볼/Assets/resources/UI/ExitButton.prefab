@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5606272476043451407, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -527624351703087600, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -166,8 +166,12 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
-  FileName: 
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
   GoodsName: {fileID: 0}
   MoneyPrice: 0
   CoinPrice: 0

@@ -149,8 +149,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 745456c969025c747867a7971aa83d51, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: c4e7ccd6256658d45a34f97722f4b3e5, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.205
   m_Pitch: 1
   Loop: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text1: {fileID: 1452574021}
   Text2: {fileID: 1328374095}
-  fSpeed: 0.5
+  fSpeed: 0.8
 --- !u!1 &230753011
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 251450436}
   - component: {fileID: 251450435}
   m_Layer: 0
-  m_Name: SaveStagesData
+  m_Name: ResetData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,6 +393,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acb88bd698b212408969639cad5d664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 8300000, guid: c827b1bfb3c83b84aa6e0a7e4cf7fdb3, type: 3}
+  Skin: {fileID: 21300000, guid: 5bceb16ce0cbccd4d96e6f2d0fd01b52, type: 3}
+  Effect: {fileID: 0}
+  SkinGoods:
+  - {fileID: 2924219769341294627, guid: 598a68fb6ddfb6b4eb6f236f0668d7ba, type: 3}
+  - {fileID: 4976323738631040920, guid: 4f2d3b71605d95149bb8ffa0d0be5256, type: 3}
+  - {fileID: 587038004805499283, guid: 9fb2cba9dde91d6438ff2552fa117511, type: 3}
+  - {fileID: 9062236625807064732, guid: 8dd3ed2edc22f114b8dbbcfdc14c016e, type: 3}
+  - {fileID: 5832062786055038156, guid: 0e546841012106d4c9a0437196c0e49c, type: 3}
+  - {fileID: 667906795700840156, guid: f3d8762d79b9c8a47a1dbf83f3ad56ca, type: 3}
+  - {fileID: 4157496605283069862, guid: a7bc9d4be3d59394090a6858c1513932, type: 3}
+  - {fileID: 5276278937417150060, guid: 66ecd4443b7e3b548b8cabb078c0fdb4, type: 3}
+  EffectGoods:
+  - {fileID: 3806592442390485651, guid: 8663880a5422d7e4fad0032253693236, type: 3}
+  SoundEffectGoods:
+  - {fileID: 8429855687037233414, guid: 846c52b59e959f642be8deef44136ab8, type: 3}
+  - {fileID: 6779085838100780416, guid: 4a9f9fa61f8550545bb3ed5bf485f8fe, type: 3}
+  - {fileID: 6019127218183248932, guid: b7da038f28041fe42ae065b774824ea5, type: 3}
+  - {fileID: 8907743571200264545, guid: 66e7efff73d6e5e448567c403286d0f6, type: 3}
   Stages:
   - {fileID: 7970556030470585435, guid: 3ba82fceb0459e549a7b618532eab538, type: 3}
   - {fileID: -590316514558189761, guid: 8c5a16467677c7a408f31b0d2de4e8b6, type: 3}
@@ -426,6 +445,7 @@ GameObject:
   - component: {fileID: 554915389}
   - component: {fileID: 554915388}
   - component: {fileID: 554915387}
+  - component: {fileID: 554915390}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -454,7 +474,6 @@ MonoBehaviour:
   HighestY: 0
   LowestY: 0
   GoingTarget: {x: 0, y: 0, z: 0}
-  BackGround: {fileID: 0}
 --- !u!20 &554915388
 Camera:
   m_ObjectHideFlags: 0
@@ -512,6 +531,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &554915390
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554915386}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 300, y: 140}
+  m_EdgeRadius: 0
 --- !u!1 &927176878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567548552503001853, guid: bf3bbd01022ce804caffd759ea5fc62e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2567548552503001855, guid: bf3bbd01022ce804caffd759ea5fc62e,
         type: 3}

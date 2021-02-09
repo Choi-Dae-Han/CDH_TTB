@@ -8,10 +8,10 @@ public class BallData
     public Sprite Skin;
     public GameObject Effect;
 
-    //public BallData(GameObject effect = null, AudioClip clip = null, Sprite skin = null)
-    //{
-    //    SE = clip;
-    //    Skin = skin;
-    //    Effect = effect;
-    //}
+    public BallData(GameObject effect = null, AudioClip clip = null, Sprite skin = null)
+    {
+        SE = clip;
+        Skin = skin;
+        Effect = effect;
+    }
 }

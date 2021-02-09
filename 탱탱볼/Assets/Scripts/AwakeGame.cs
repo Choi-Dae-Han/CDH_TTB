@@ -10,7 +10,7 @@ public class AwakeGame : MonoBehaviour
 
     [SerializeField] private TMPro.TMP_Text Text1;
     [SerializeField] private TMPro.TMP_Text Text2;
-    [SerializeField] private float fSpeed = 0.5f;
+    [SerializeField] private float fSpeed = 0.8f;
     private GameManager GM;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class AwakeGame : MonoBehaviour
     private void StateProcess()
     {
         GM.fSec += Time.smoothDeltaTime;
-        if (GM.fSec >= 10f || Input.anyKeyDown && GM.fSec >= 2f)
+        if (GM.fSec >= 7f || Input.anyKeyDown && GM.fSec >= 2f)
         {
             GM.fSec = 0.0f;
             GM.ChangeGameState(GameManager.GAMESTATE.TITLEMENU);
@@ -42,7 +42,7 @@ public class AwakeGame : MonoBehaviour
                 if (Text2.alpha >= 1f) ChangeState(STATE.SHOWING);
                 break;
             case STATE.SHOWING:
-                if (GM.fSec >= 7f) ChangeState(STATE.DISAPPEARING);
+                if (GM.fSec >= 5f) ChangeState(STATE.DISAPPEARING);
                 break;
             case STATE.DISAPPEARING:
                 DisappearText(Text1);
@@ -61,6 +61,7 @@ public class AwakeGame : MonoBehaviour
             case STATE.APPEARING:
                 break;
             case STATE.SHOWING:
+                GetComponent<AudioSource>().Play();
                 break;
             case STATE.DISAPPEARING:
                 break;

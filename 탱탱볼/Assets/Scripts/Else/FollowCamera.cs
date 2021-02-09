@@ -21,7 +21,6 @@ public class FollowCamera : MonoBehaviour
     [SerializeField] private float HighestY = 0f;
     [SerializeField] private float LowestY = 0f;
     public Vector3 GoingTarget = Vector3.zero;
-    [SerializeField] private Transform BackGround;
 
     private void Awake()
     {
@@ -124,9 +123,6 @@ public class FollowCamera : MonoBehaviour
             if (BallRT.position.y < LowestY) LowestY = BallRT.position.y;
             GoingTarget.y = LowestY + StayRangeY;
         }
-       // Vector3 Temp = transform.position;
         transform.position = Vector3.Lerp(transform.position, GoingTarget, Speed * Time.smoothDeltaTime);
-        //MovedDist = transform.position - Temp;
-        //BackGround.transform.Translate(-MovedDist / 10f);
     }
 }

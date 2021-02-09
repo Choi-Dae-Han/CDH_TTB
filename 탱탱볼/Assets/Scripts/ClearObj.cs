@@ -15,6 +15,8 @@ public class ClearObj : MonoBehaviour
     public Vector2 Target = Vector2.zero;
     public AudioClip ClearSound;
     public float fMoveSpeed = 0f;
+    public float Dist1 = 0f;
+    public float Dist2 = 0f;
 
     GameObject Obj_1;
     GameObject Obj_2;
@@ -101,6 +103,18 @@ public class ClearObj : MonoBehaviour
                 }
                 break;
             case STATE.DISAPPEAR:
+                switch(GM.nScore)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        Dist1 = Vector2.Distance(Obj_1.transform.position, DisappearCoinPos) * 0.66f;
+                        break;
+                    case 3:
+                        Dist1 = Vector2.Distance(Obj_1.transform.position, DisappearCoinPos) * 0.66f;
+                        Dist2 = Vector2.Distance(transform.position, DisappearCoinPos) * 0.66f;
+                        break;
+                }
                 break;
         }
     }
@@ -158,7 +172,8 @@ public class ClearObj : MonoBehaviour
                 break;
             case 2:
                 LerpToTarget(Obj_1.transform, DisappearCoinPos);
-                LerpToTarget(transform, DisappearCoinPos);
+                if(Vector2.Distance(Obj_1.transform.position, DisappearCoinPos) < Dist1)
+                    LerpToTarget(transform, DisappearCoinPos);
 
                 if (Vector2.Distance(transform.position, DisappearCoinPos) <= 2f)
                 {
@@ -169,10 +184,12 @@ public class ClearObj : MonoBehaviour
                 break;
             case 3:
                 LerpToTarget(Obj_1.transform, DisappearCoinPos);
-                LerpToTarget(Obj_2.transform, DisappearCoinPos);
-                LerpToTarget(transform, DisappearCoinPos);
+                if (Vector2.Distance(Obj_1.transform.position, DisappearCoinPos) < Dist1)
+                    LerpToTarget(transform, DisappearCoinPos);
+                if (Vector2.Distance(transform.position, DisappearCoinPos) < Dist2)
+                    LerpToTarget(Obj_2.transform, DisappearCoinPos);
 
-                if (Vector2.Distance(transform.position, DisappearCoinPos) <= 2f)
+                if (Vector2.Distance(Obj_2.transform.position, DisappearCoinPos) <= 2f)
                 {
                     ShowClearUI();
                     Destroy(Obj_1);

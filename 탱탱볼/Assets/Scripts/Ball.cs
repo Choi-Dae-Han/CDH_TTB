@@ -24,11 +24,13 @@ public class Ball : MonoBehaviour
     public bool TopCrashed = false;
     public bool BottomCrashed = false;
 
+    public bool ISMainGame = true;
+
     [SerializeField] private GameObject DeadEffect;
     public SpriteRenderer SR;
 
     //Effect
-    public GameObject Effect;
+    public GameObject BallEffect;
 
     //Sound
     public AudioClip BounceSound;
@@ -54,14 +56,34 @@ public class Ball : MonoBehaviour
         fMoveSpeed *= Time.fixedDeltaTime;
         fHitPower *= Time.fixedDeltaTime;
 
-        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
-        if (data.Skin != null) SR.sprite = data.Skin;
-        if (data.SE != null) BounceSound = data.SE;
-        if (data.Effect != null)
+        if (ISMainGame)
         {
-            Effect = Instantiate(data.Effect);
-            effect.transform.SetParent(gameObject.transform);
-            effect.transform.localPosition = Vector3.zero;
+            var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
+            if (data.Skin != null) SR.sprite = data.Skin;
+            if (data.SE != null) BounceSound = data.SE;
+            if (data.Effect != null)
+            {
+                GameObject effect = Instantiate(data.Effect);
+                effect.transform.SetParent(transform);
+                effect.transform.localPosition = Vector3.zero;
+
+                BallEffect_01 BE = effect.GetComponent<BallEffect_01>();
+                BE.ball = GetComponent<Ball>();
+                BE.Skin = SR.sprite;
+            }
+        }
+        else
+        {
+            if (BallEffect != null)
+            {
+                GameObject effect = Instantiate(BallEffect);
+                effect.transform.SetParent(transform);
+                effect.transform.localPosition = Vector3.zero;
+
+                BallEffect_01 BE = effect.GetComponent<BallEffect_01>();
+                BE.ball = GetComponent<Ball>();
+                BE.Skin = BE.ball.SR.sprite;
+            }
         }
     }
 

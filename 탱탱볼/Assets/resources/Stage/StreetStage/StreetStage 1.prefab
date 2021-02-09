@@ -334,13 +334,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageNum: 1
-  NextAreaName: CityStage
+  NextAreaName: 
   AreaName: StreetStage
   fLimitTime: 30
   GotCoins: 0
   Cleared: 0
   Opened: 1
-  LastStageOfArea: 0
+  NextStage: {fileID: 0}
 --- !u!1001 &7987659289801212413
 PrefabInstance:
   m_ObjectHideFlags: 0

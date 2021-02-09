@@ -170,15 +170,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 0
+  goodsState: 0
   UsingLockImg: {fileID: 8979092578259414892}
-  UI: {fileID: 7024674426840238939, guid: c4a81938c9eb77e46b10f2cfba784d95, type: 3}
+  UI: {fileID: 1993788749135992144, guid: c4a81938c9eb77e46b10f2cfba784d95, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 5796625251239727844}
   BGIofButton: {fileID: 2800000, guid: cde1d6359586f2a4b920c526b75ff2ca, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &5907825023299858363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -826,7 +841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5606272476043451407, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -527624351703087600, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -916,6 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 8765030889207985292, guid: ae00b1977a623b4498ff18765dd5a5ab, type: 3}
   UsingUI: {fileID: 0}
@@ -924,7 +940,21 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &1308857171457427449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1356,7 +1386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4860276206832248179, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -4416803136263028469, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1568,6 +1598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 5358887580924977200, guid: 29465430ebd27a84d9ec8d44654434d7, type: 3}
   UsingUI: {fileID: 0}
@@ -1576,7 +1607,21 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &3521174597769276527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,15 +1926,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 0
+  goodsState: 0
   UsingLockImg: {fileID: 830003662555002173}
-  UI: {fileID: 2462555649826885152, guid: 61bf43f795139154a94b85840f2136f8, type: 3}
+  UI: {fileID: 1905519760960186410, guid: 61bf43f795139154a94b85840f2136f8, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 5796625251239727844}
   BGIofButton: {fileID: 2800000, guid: 7c5af448984a66c40bd49b664d93d765, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &8225474230983242537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2182,15 +2242,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 0
+  goodsState: 0
   UsingLockImg: {fileID: 5997770933279273091}
-  UI: {fileID: 3650528517601238575, guid: e6a14376322673f469aa7c8affbd100f, type: 3}
+  UI: {fileID: 6667700070265166549, guid: e6a14376322673f469aa7c8affbd100f, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 5796625251239727844}
   BGIofButton: {fileID: 2800000, guid: c7b4e1f9865c61143879a8da5f149c3a, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &7785401091463107602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2339,13 +2414,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6947341275904889756}
   m_Father: {fileID: 1512805857546363278}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 340, y: -50}
+  m_AnchoredPosition: {x: 300, y: -50}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5889653517766029809
@@ -2518,15 +2594,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 0
+  goodsState: 0
   UsingLockImg: {fileID: 200330713047075523}
-  UI: {fileID: 5829103225564728222, guid: 3b8397180c72cb94084a67289cd20246, type: 3}
+  UI: {fileID: 7655198354429710332, guid: 3b8397180c72cb94084a67289cd20246, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 5796625251239727844}
   BGIofButton: {fileID: 2800000, guid: 6898bcb4a6c7afd449336dcc33820d34, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &4167410496951182130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2818,6 +2909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 284886226102848703, guid: aac372ad91e1e4444914f30c8150b813, type: 3}
   UsingUI: {fileID: 9087744589717378086}
@@ -2826,7 +2918,21 @@ MonoBehaviour:
   BGIofButton: {fileID: 2800000, guid: 98c700f7aeac03a4189890f014040b6c, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &2496775431090276697
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3017,7 +3123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3374065793197357566, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: -6642785372415729631, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3229,6 +3335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
+  goodsState: 0
   UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
@@ -3237,7 +3344,21 @@ MonoBehaviour:
   BGIofButton: {fileID: 0}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 0}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
   stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!1 &7638462622868090088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,7 +3662,6 @@ RectTransform:
   - {fileID: 4468535479730184068}
   - {fileID: 7844831653194486737}
   - {fileID: 938238393531303195}
-  - {fileID: 6947341275904889756}
   m_Father: {fileID: 1512805857546363278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3900,15 +4020,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 0
+  goodsState: 0
   UsingLockImg: {fileID: 4000822009850274496}
-  UI: {fileID: 4803878215496634604, guid: 573d8f7107ece2249a922e0c07f8aaf5, type: 3}
+  UI: {fileID: 4748436583077616896, guid: 573d8f7107ece2249a922e0c07f8aaf5, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
   BGI: {fileID: 5796625251239727844}
   BGIofButton: {fileID: 2800000, guid: d07486b1aece8dd4cb14314ff6355636, type: 3}
   ContentRT: {fileID: 0}
   StageListRT: {fileID: 2792081088157356345}
-  stage: {fileID: 1509910258227580153, guid: 905ad672c49a04545b0350937451c5ec, type: 3}
+  CoinImage: {fileID: 0}
+  CoinUIPos: []
+  stage: {fileID: 0}
+  shop: {fileID: 0}
+  TestApplyButton: {fileID: 0}
+  BuyButton: {fileID: 0}
+  ApplyButton: {fileID: 0}
+  GoodsImgTR: {fileID: 0}
+  SoldImg: {fileID: 0}
+  SellingEffect: {fileID: 0}
+  SellingSE: {fileID: 0}
+  SellingSkin: {fileID: 0}
+  GoodsName: {fileID: 0}
+  MoneyPrice: 0
+  CoinPrice: 0
 --- !u!61 &7246841403724865786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4816,7 +4951,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 9180588152674816237}
+    m_TransformParent: {fileID: 2792081088157356345}
     m_Modifications:
     - target: {fileID: 284886226102848703, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}
@@ -4901,7 +5036,7 @@ PrefabInstance:
     - target: {fileID: 2126775556470885125, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2126775556470885125, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}
@@ -4921,12 +5056,12 @@ PrefabInstance:
     - target: {fileID: 2126775556470885125, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2126775556470885125, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2126775556470885125, guid: aac372ad91e1e4444914f30c8150b813,
         type: 3}

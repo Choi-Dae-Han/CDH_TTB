@@ -14,6 +14,12 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public BUTTONSTATE buttonState = BUTTONSTATE.UNLOCK;
 
+    public enum GOODSSTATE
+    {
+        UNSOLD, SOLD
+    }
+    public GOODSSTATE goodsState = GOODSSTATE.UNSOLD;
+
     public GameObject UsingLockImg;
     public GameObject UI;
     public GameObject UsingUI;
@@ -22,12 +28,24 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public Texture2D BGIofButton;
     public RectTransform ContentRT;
     public RectTransform StageListRT;
-    public string FileName;
+    public Sprite CoinImage;
+    public Image[] CoinUIPos;
     public Stage stage;
     public Shop shop;
     AudioSource AM;
     GameManager GM;
     Vector2 ButtonScale = Vector2.zero;
+
+    public GameObject TestApplyButton;
+    public GameObject BuyButton;
+    public GameObject ApplyButton;
+
+    public Transform GoodsImgTR;
+    public GameObject SoldImg;
+
+    [SerializeField] private GameObject SellingEffect;
+    [SerializeField] private GameObject SellingSE;
+    [SerializeField] private GameObject SellingSkin;
 
     [SerializeField] private Text GoodsName;
     [SerializeField] private int MoneyPrice;
@@ -40,13 +58,38 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         GM = GM_Obj.GetComponent<GameManager>();
         ButtonScale = new Vector2(transform.localScale.x, transform.localScale.y);
 
+        if (SellingEffect != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, SellingEffect.GetComponent<EffectGoods>().NameForData, "/JsonData/Goods/Effect/");
+            if (data.IsHaving) ChangeGoodsStage(GOODSSTATE.SOLD);
+        }
+        if (SellingSE != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, SellingSE.GetComponent<SoundEffectGoods>().NameForData, "/JsonData/Goods/SoundEffect/");
+            if (data.IsHaving) ChangeGoodsStage(GOODSSTATE.SOLD);
+        }
+        if (SellingSkin != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, SellingSkin.GetComponent<SkinGoods>().NameForData, "/JsonData/Goods/Skin/");
+            if (data.IsHaving) ChangeGoodsStage(GOODSSTATE.SOLD);
+        }
+
         if (stage != null)
         {
             LoadButtonData();
-            if (stage.LoadStageData(stage.AreaName, stage.StageNum).Opened)
+            var data = stage.LoadStageData(stage.AreaName, stage.StageNum);
+            if (data.Opened)
             {
                 ChangeButtonState(BUTTONSTATE.UNLOCK);
                 SaveButtonState(2);
+            }
+
+            for (int i = 0; i < data.GotCoins; ++i)
+            {
+                CoinUIPos[i].sprite = CoinImage;
             }
         }
         else
@@ -83,6 +126,21 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 GetComponent<Button>().interactable = true;
                 transform.localScale = ButtonScale;
                 if (UsingLockImg != null) Destroy(UsingLockImg);
+                break;
+        }
+    }
+
+    public void ChangeGoodsStage(GOODSSTATE s)
+    {
+        if (goodsState == s) return;
+        goodsState = s;
+
+        switch(s)
+        {
+            case GOODSSTATE.UNSOLD:
+                break;
+            case GOODSSTATE.SOLD:
+                ShowSoldImg();
                 break;
         }
     }
@@ -140,6 +198,14 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         Destroy(transform.parent.gameObject);  
     }
 
+    public void ShowSoldImg()
+    {
+        GameObject obj = Instantiate(SoldImg);
+        obj.transform.SetParent(GoodsImgTR);
+        obj.transform.localPosition = Vector3.zero;
+        obj.transform.localScale = Vector3.one;
+    }
+
     public void ShowUI()
     {
         if (UsingUI == null)
@@ -157,24 +223,23 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {
             GM.ClearChild(StageListRT);
             UsingUI = Instantiate(UI);
-            UsingUI.transform.position = StageListRT.position;
+            UsingUI.transform.SetParent(StageListRT);
+            UsingUI.transform.localPosition = Vector3.zero;
             UsingUI.transform.localScale = Vector3.one;
         }
     }
 
     public void LoadStage()
     {
-        GM.LoadStage(stage.gameObject);
+        if (stage != null)
+            GM.LoadStage(stage.gameObject);
     }
 
     public void LoadShopStage()
     {
-        Ball Temp = GM.Ball_Obj_Shop.GetComponent<Ball>();
-        if (shop.ShopBallSprite != null)Temp.SR.sprite = shop.ShopBallSprite;
-        if (shop.ShopBallSE != null) Temp.BounceSound = shop.ShopBallSE;
-        if (shop.ShopBallEffect != null) Temp.Effect = shop.ShopBallEffect;
-        GM.LoadShopStage();
+        GM.LoadShopStage(shop.ShopBallSprite, shop.ShopBallSE, shop.ShopBallEffect);
     }
+
     public void PauseGame()
     {
         GM.Pause();
@@ -190,28 +255,166 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         BGI.texture = BGIofButton;
     }
 
-    public void ChangeBallEffect(GameObject obj)
+    public void ChangeBallEffect(GameObject effect)
     {
-        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
-        data.Effect = obj;
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
+        data.Effect = effect;
         string jsonData = DataManager.ObjectToJson(data);
         DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
     }
 
-    public void ChangeBallSkin(Sprite ballSkin)
+    public void ChangeBallSkin(Sprite skin)
     {
-        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
-        data.Skin = ballSkin;
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
+        data.Skin = skin;
         string jsonData = DataManager.ObjectToJson(data);
         DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
     }
 
     public void ChangeBallSE(AudioClip se)
     {
-        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, FileName, "/JsonData/Player/");
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
         data.SE = se;
         string jsonData = DataManager.ObjectToJson(data);
         DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player/", jsonData);
+    }
+
+    public void Apply()
+    {
+        Shop shop = GameObject.Find("Shop(Clone)").GetComponent<Shop>();
+        GoodsInfo GI = transform.parent.GetComponent<GoodsInfo>();
+        var data = DataManager.LoadJsonFile<BallData>(
+            Application.dataPath, "BallData", "/JsonData/Player/");
+
+        if (GI.SellingSkin != null)
+        {
+            data.Skin = GI.SellingSkin.GetComponent<SkinGoods>().SellingSkin;
+            shop.ShopBallSprite = GI.SellingSkin.GetComponent<SkinGoods>().SellingSkin;
+            shop.Text_Skin.text = GI.SellingSkin.name;
+            shop.BGIofShopBallSprite.color = Color.white;
+        }
+        else if (GI.SellingEffect != null)
+        {
+            data.Effect = GI.SellingEffect.GetComponent<EffectGoods>().SellingEffect;
+            shop.ShopBallEffect = GI.SellingEffect.GetComponent<EffectGoods>().SellingEffect;
+            shop.Text_Effect.text = GI.SellingEffect.name;
+            shop.BGIofShopBallEffect.color = Color.white;
+        }
+        else if (GI.SellingSE != null)
+        {
+            data.SE = GI.SellingSE.GetComponent<SoundEffectGoods>().SellingSE;
+            shop.ShopBallSE = GI.SellingSE.GetComponent<SoundEffectGoods>().SellingSE;
+            shop.Text_SoundEffect.text = GI.SellingSE.name;
+            shop.BGIofShopBallSE.color = Color.white;
+        }
+
+        string jsonData = DataManager.ObjectToJson(data);
+        DataManager.CreateJsonFile(Application.dataPath, "BallData", "/JsonData/Player", jsonData);
+    }
+
+    public void TestApply()
+    {
+        Shop shop = GameObject.Find("Shop(Clone)").GetComponent<Shop>();
+        GoodsInfo GI = transform.parent.GetComponent<GoodsInfo>();
+        if (GI.SellingSkin != null)
+        {
+            shop.ShopBallSprite = GI.SellingSkin.GetComponent<SkinGoods>().SellingSkin;
+            shop.Text_Skin.text = GI.SellingSkin.name;
+            shop.BGIofShopBallSprite.color = Color.blue;
+        }
+        else if (GI.SellingEffect != null)
+        {
+            shop.ShopBallEffect = GI.SellingEffect.GetComponent<EffectGoods>().SellingEffect;
+            shop.Text_Effect.text = GI.SellingEffect.name;
+            shop.BGIofShopBallEffect.color = Color.blue;
+        }
+        else if (GI.SellingSE != null)
+        {
+            shop.ShopBallSE = GI.SellingSE.GetComponent<SoundEffectGoods>().SellingSE;
+            shop.Text_SoundEffect.text = GI.SellingSE.name;
+            shop.BGIofShopBallSE.color = Color.blue;
+        }
+    }
+
+    public void ResetApply()
+    {
+        Shop shop = GameObject.Find("Shop(Clone)").GetComponent<Shop>();
+        var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");
+
+        if (data.Skin != null)
+        {
+            shop.ShopBallSprite = data.Skin;
+            shop.Text_Skin.text = data.Skin.name;
+            shop.BGIofShopBallSprite.color = Color.white;
+        }
+        if (data.Effect != null)
+        {
+            shop.ShopBallEffect = data.Effect;
+            shop.Text_Effect.text = data.Effect.name;
+            shop.BGIofShopBallEffect.color = Color.white;
+        }
+        else
+        {
+            shop.Text_Effect.text = "기본";
+            shop.BGIofShopBallEffect.color = Color.white;
+        }
+        if (data.SE != null)
+        {
+            shop.ShopBallSE = data.SE;
+            shop.Text_SoundEffect.text = data.SE.name;
+            shop.BGIofShopBallSE.color = Color.white;
+        }
+    }
+
+    public void BuyGoods()
+    {
+        Shop shop = GameObject.Find("Shop(Clone)").GetComponent<Shop>();
+        GoodsInfo GI = transform.parent.GetComponent<GoodsInfo>();
+        if (GI.SellingSkin != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, GI.SellingSkin.name, "/JsonData/Goods/Skin/");
+            if (!data.IsHaving)
+            {
+                SkinGoods SG = GI.SellingSkin.GetComponent<SkinGoods>();
+                SG.SaveGoodsData(true);
+                ChangeBallSkin(SG.SellingSkin);
+                shop.ShopBallSprite = SG.SellingSkin;
+                shop.Text_Skin.text = GI.SellingSkin.name;
+                shop.BGIofShopBallSprite.color = Color.white;
+                GI.ParentButton.GetComponent<ButtonFunction>().ChangeGoodsStage(GOODSSTATE.SOLD);
+            }
+        }
+        else if (GI.SellingEffect != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, GI.SellingEffect.name, "/JsonData/Goods/Effect/");
+            if (!data.IsHaving)
+            {
+                EffectGoods EG = GI.SellingEffect.GetComponent<EffectGoods>();
+                EG.SaveGoodsData(true);
+                ChangeBallEffect(EG.SellingEffect);
+                shop.ShopBallEffect = EG.SellingEffect;
+                shop.Text_Effect.text = GI.SellingEffect.name;
+                shop.BGIofShopBallEffect.color = Color.white;
+                GI.ParentButton.GetComponent<ButtonFunction>().ChangeGoodsStage(GOODSSTATE.SOLD);
+            }
+        }
+        else if (GI.SellingSE != null)
+        {
+            var data = DataManager.LoadJsonFile<GoodsData>(
+                Application.dataPath, GI.SellingSE.name, "/JsonData/Goods/SoundEffect/");
+            if (!data.IsHaving)
+            {
+                SoundEffectGoods SEG = GI.SellingSE.GetComponent<SoundEffectGoods>();
+                SEG.SaveGoodsData(true);
+                ChangeBallSE(SEG.SellingSE);
+                shop.ShopBallSE = SEG.SellingSE;
+                shop.Text_SoundEffect.text = GI.SellingSE.name;
+                shop.BGIofShopBallSE.color = Color.white;
+                GI.ParentButton.GetComponent<ButtonFunction>().ChangeGoodsStage(GOODSSTATE.SOLD);
+            }
+        }
     }
 
     public void ShowGoodsInfo()
@@ -221,15 +424,40 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             GM.CreateWhiteScreen();
             UsingUI = Instantiate(UI);
             UsingUI.transform.SetParent(transform.root);
-            UsingUI.transform.position = Vector3.zero;
             UsingUI.transform.localPosition = Vector3.zero;
             UsingUI.transform.localScale = Vector3.one;
 
             GoodsInfo GI = UsingUI.GetComponent<GoodsInfo>();
+
+            switch (goodsState)
+            {
+                case GOODSSTATE.UNSOLD:
+                    GameObject btn1 = Instantiate(TestApplyButton);
+                    btn1.transform.SetParent(UsingUI.transform);
+                    btn1.transform.position = GI.TestApplyButtonTR.position;
+                    btn1.transform.localScale = Vector3.one;
+                    GameObject btn2 = Instantiate(BuyButton);
+                    btn2.transform.SetParent(UsingUI.transform);
+                    btn2.transform.position = GI.BuyButtonTR.position;
+                    btn2.transform.localScale = Vector3.one;
+                    break;
+                case GOODSSTATE.SOLD:
+                    GameObject btn3 = Instantiate(ApplyButton);
+                    btn3.transform.SetParent(UsingUI.transform);
+                    btn3.transform.position = GI.ApplyButtonTR.position;
+                    btn3.transform.localScale = Vector3.one;
+                    break;
+            }
+
+            GI.ParentButton = gameObject;
             GI.GoodsName.text = GoodsName.text;
             GI.GoodsImage.texture = gameObject.transform.GetChild(0).GetComponent<RawImage>().texture;
             GI.CoinPrice.text = CoinPrice + "";
             GI.MoneyPrice.text = MoneyPrice + "";
+
+            if (SellingSkin != null) GI.SellingSkin = SellingSkin;
+            else if (SellingEffect != null) GI.SellingEffect = SellingEffect;
+            else if (SellingSE != null) GI.SellingSE = SellingSE;
         }
     }
 

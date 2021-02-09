@@ -121,9 +121,11 @@
     <Compile Include="Assets\Scripts\DecreaseLifeObj.cs" />
     <Compile Include="Assets\Scripts\DisappearEffect.cs" />
     <Compile Include="Assets\Scripts\Effect.cs" />
+    <Compile Include="Assets\Scripts\EffectGoods.cs" />
     <Compile Include="Assets\Scripts\Else\Data\BallData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\ButtonData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\DataManager.cs" />
+    <Compile Include="Assets\Scripts\Else\Data\GoodsData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\SaveAllData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\Stage.cs" />
@@ -132,11 +134,14 @@
     <Compile Include="Assets\Scripts\Else\DrawIfPropertyDrawer.cs" />
     <Compile Include="Assets\Scripts\Else\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\Else\Shop.cs" />
+    <Compile Include="Assets\Scripts\Else\ShopStage.cs" />
     <Compile Include="Assets\Scripts\FireMuzzle.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GoodsInfo.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
+    <Compile Include="Assets\Scripts\SkinGoods.cs" />
+    <Compile Include="Assets\Scripts\SoundEffectGoods.cs" />
     <Compile Include="Assets\Scripts\Test\Test.cs" />
     <Compile Include="Assets\Scripts\UI\BackGround.cs" />
     <Compile Include="Assets\Scripts\UI\BlinkText.cs" />

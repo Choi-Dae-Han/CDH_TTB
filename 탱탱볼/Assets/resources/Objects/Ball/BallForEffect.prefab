@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SR: {fileID: 2911869780181535353}
-  DisappearSpeed: 0
+  DisappearSpeed: 0.3
