@@ -80,7 +80,6 @@ public class Monster : MonoBehaviour
                 Ani.SetFloat("MoveSpeed", 0.0f);
                 break;
             case STATE.MOVE:
-                Ani.SetFloat("MoveSpeed", fMoveSpeed * 0.02f);
                 break;
             case STATE.DEAD:
                 Dead();
@@ -90,16 +89,20 @@ public class Monster : MonoBehaviour
 
     private void MoveToTarget()
     {
-        if (TargetObj.position.x > transform.position.x)
+        if (TargetObj.position.x > transform.position.x + 30f)
         {
+            Ani.SetFloat("MoveSpeed", fMoveSpeed * 0.02f);
             transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
             RB.velocity = new Vector2(fMoveSpeed, 0f);
         }
-        else
+        else if (TargetObj.position.x < transform.position.x - 30f)
         {
+            Ani.SetFloat("MoveSpeed", fMoveSpeed * 0.02f);
             transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
             RB.velocity = new Vector2(-fMoveSpeed, 0f);
         }
+        else
+            Ani.SetFloat("MoveSpeed", 0.0f);
     }
 
     private void Angry()

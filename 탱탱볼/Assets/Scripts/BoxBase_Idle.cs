@@ -130,9 +130,9 @@ public class BoxBase_Idle : MonoBehaviour
             for(int i = 0; i < 4; ++i)
             {
                 AniMove(BrokenBoxes[i], xVelo[i], yVelo[i], rotateSpeed[i]);
-                if (xVelo[i] > 0.1) xVelo[i] -= 1.5f * Time.smoothDeltaTime;
-                if (xVelo[i] < -0.1) xVelo[i] += 1.5f * Time.smoothDeltaTime;
-                yVelo[i] -= 5 * Time.smoothDeltaTime;
+                if (xVelo[i] > 0.1) xVelo[i] -= Time.smoothDeltaTime;
+                if (xVelo[i] < -0.1) xVelo[i] += Time.smoothDeltaTime;
+                yVelo[i] -= 6.25f * Time.smoothDeltaTime;
             }
 
             if (fTime >= 2f)
