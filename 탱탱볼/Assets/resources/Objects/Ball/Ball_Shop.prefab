@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4e49b42016c14846bd7f22fa41812e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8046eb868c04223489e2a29a967cc2ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,8 +121,9 @@ MonoBehaviour:
   ISMainGame: 0
   DeadEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   SR: {fileID: 8232803405402617063}
-  BallEffect: {fileID: 0}
-  BounceSound: {fileID: 8300000, guid: c827b1bfb3c83b84aa6e0a7e4cf7fdb3, type: 3}
+  BallEffect: {fileID: 1897616102067141129, guid: 900f0609b726afe4fa5e088a36ec1fd4,
+    type: 3}
+  BounceSound: {fileID: 8300000, guid: fbdf4693a1b858c49a0f3f46c5b853bd, type: 3}
   DeadSound: {fileID: 8300000, guid: f2b7234ccacad8d438ce0e85bc041416, type: 3}
   GM: {fileID: 0}
 --- !u!58 &5385906602186606536

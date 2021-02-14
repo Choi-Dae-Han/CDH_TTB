@@ -16,6 +16,9 @@ public class Shop : MonoBehaviour
     public Image BGIofShopBallSE;
     public Image BGIofShopBallEffect;
 
+    public Sprite BackGroundForStage;
+    public Sprite GroundsForStage;
+
     private void Awake()
     {
         var data = DataManager.LoadJsonFile<BallData>(Application.dataPath, "BallData", "/JsonData/Player/");

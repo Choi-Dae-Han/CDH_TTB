@@ -139,10 +139,10 @@ public class Ball : MonoBehaviour
         //#elif UNITY_IOS
         //TouchInput();
         //#else
-        //        if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
-        //            fXVelocity -= fMoveSpeed;
-        //        if (Input.GetKey(KeyCode.D) && fXVelocity < fMaxXVelocity)
-        //            fXVelocity += fMoveSpeed;
+        //if (Input.GetKey(KeyCode.A) && fXVelocity > -fMaxXVelocity) // 방향키 입력 및 최고 속도 제한
+        //    fXVelocity -= fMoveSpeed;
+        //if (Input.GetKey(KeyCode.D) && fXVelocity < fMaxXVelocity)
+        //    fXVelocity += fMoveSpeed;
         //#endif
         if (fXVelocity > fDecreaseXVelocity) // 항상 X축 속도 감소
             fXVelocity -= fDecreaseXVelocity;

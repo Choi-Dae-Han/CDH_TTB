@@ -49,7 +49,7 @@ public class Monster : MonoBehaviour
             case STATE.IDLE:
                 break;
             case STATE.MOVE:
-                if(RB.velocity.y == 0) MoveToTarget();
+                if(Mathf.Abs(RB.velocity.y) <= 0.1f) MoveToTarget();
                 if (StepOfAngry < 3)
                 {
                     fTime += Time.smoothDeltaTime;
@@ -76,6 +76,7 @@ public class Monster : MonoBehaviour
             case STATE.CREATE:
                 break;
             case STATE.IDLE:
+                TargetObj = null;
                 Ani.SetFloat("MoveSpeed", 0.0f);
                 break;
             case STATE.MOVE:
@@ -103,7 +104,7 @@ public class Monster : MonoBehaviour
 
     private void Angry()
     {       
-        GetComponent<SpriteRenderer>().color -= new Color(0f, 0.2f, 0.2f, 0f);
+        GetComponent<SpriteRenderer>().color -= new Color(0f, 0.25f, 0.25f, 0f);
         fMoveSpeed *= 1.3f;
         Ani.SetFloat("MoveSpeed", fMoveSpeed * 0.02f);
     }
@@ -141,7 +142,6 @@ public class Monster : MonoBehaviour
     {
         if (CrashObj.gameObject.CompareTag("Player"))
         {
-            TargetObj = null;
             ChangeState(STATE.IDLE);
         }
     }

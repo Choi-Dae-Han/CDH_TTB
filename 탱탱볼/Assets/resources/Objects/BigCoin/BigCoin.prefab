@@ -119,7 +119,9 @@ MonoBehaviour:
   state: 0
   Target: {x: 0, y: 0}
   ClearSound: {fileID: 8300000, guid: df7870e3a18d3dc419d87449be41d777, type: 3}
-  fMoveSpeed: 3
+  fMoveSpeed: 6
+  Dist1: 0
+  Dist2: 0
   DisappearCoinPos: {x: 0, y: 0}
   FirstCoinPos: {x: 0, y: 0}
   SecondCoinPos: {x: 0, y: 0}

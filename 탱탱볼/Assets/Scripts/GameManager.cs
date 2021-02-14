@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject Ball_Obj;
     public GameObject Ball_Obj_Shop;
-    public Ball UsingBall_Obj_Shop;
     public GameObject PauseUI;
     public GameObject BackButtonUI;
     public GameObject ClearUI;
@@ -101,6 +100,10 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.SHOP:
                 StopAllCoroutines();
                 ClearChild(MainCameraTr);
+                Ball shopBall = Ball_Obj_Shop.GetComponent<Ball>();
+                shopBall.SR.sprite = null;
+                shopBall.BallEffect = null;
+                shopBall.BounceSound = null;
                 if (GameObject.Find("Ball_Shop(Clone)") != null)
                     GameObject.Find("Ball_Shop(Clone)").tag = "Untagged";
                 ClearChild(StageTR);
@@ -172,6 +175,7 @@ public class GameManager : MonoBehaviour
         GameObject Temp1 = CreateUI(TimeUI, Vector3.zero);
         Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(-130f, -80f);
         Temp1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -80f);
+        TimeText = Temp1.GetComponent<Text>();
         ClearChild(MainCameraTr);
         nAddScoreObj = 0;
         OnStage = Instantiate(PlayingStage);
@@ -286,6 +290,7 @@ public class GameManager : MonoBehaviour
 
         if (PlayingStage != null)
         {
+            ResetTime();
             MainCameraTr.position = ResetCameraPos;
             MainCameraTr.gameObject.GetComponent<FollowCamera>().GoingTarget = ResetCameraPos;
             if (GameObject.Find("Ball(Clone)") != null)
@@ -303,11 +308,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadShopStage(Sprite skin, AudioClip se, GameObject effect = null)
+    public void LoadShopStage(Sprite backGround, Sprite grounds, Sprite skin, AudioClip se, GameObject effect = null)
     {
         ChangeGameState(GAMESTATE.SHOPSTAGE);
         GameObject Temp = CreateUI(BackButtonUI, Vector3.zero);
         Temp.GetComponent<RectTransform>().anchoredPosition = new Vector2(130f, -130f);
+        ShopStage SS = ShopStage.GetComponent<ShopStage>();
+        SS.BackGroundToApply = backGround;
+        SS.GounrdSkinToApply = grounds;
         OnStage = Instantiate(ShopStage);
         OnStage.transform.SetParent(StageTR);
         OnStage.transform.localPosition = Vector3.zero;
@@ -315,8 +323,7 @@ public class GameManager : MonoBehaviour
         Ball shopBall = Ball_Obj_Shop.GetComponent<Ball>();
         shopBall.SR.sprite = skin;
         shopBall.BounceSound = se;
-        shopBall.BallEffect = effect;
-
+        shopBall.BallEffect = effect; // 수정해야함
         CreateObject(Ball_Obj_Shop, Vector3.zero, StageTR);
     }
 

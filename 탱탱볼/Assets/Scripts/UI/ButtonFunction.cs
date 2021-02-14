@@ -237,7 +237,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void LoadShopStage()
     {
-        GM.LoadShopStage(shop.ShopBallSprite, shop.ShopBallSE, shop.ShopBallEffect);
+        GM.LoadShopStage(shop.BackGroundForStage,shop.GroundsForStage, shop.ShopBallSprite, shop.ShopBallSE, shop.ShopBallEffect);
     }
 
     public void PauseGame()
@@ -355,6 +355,7 @@ public class ButtonFunction : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         }
         else
         {
+            shop.ShopBallEffect = null;
             shop.Text_Effect.text = "기본";
             shop.BGIofShopBallEffect.color = Color.white;
         }

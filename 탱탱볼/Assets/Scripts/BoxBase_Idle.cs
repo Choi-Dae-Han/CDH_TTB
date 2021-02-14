@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class BoxBase_Idle : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class BoxBase_Idle : MonoBehaviour
     [DrawIf("bDestroyable", true)] [SerializeField] private int nDestroyCount = 0;
     [DrawIf("bDestroyable", true)] [SerializeField] private int nCrashedCount = 0;
     [DrawIf("bDestroyable", true)] [SerializeField] private TMPro.TMP_Text ShowNum;
+    [SerializeField] private Transform[] BrokenBoxes;
     [SerializeField] private RectTransform Left;
     [SerializeField] private RectTransform Right;
     [SerializeField] private RectTransform Top;
@@ -97,6 +100,56 @@ public class BoxBase_Idle : MonoBehaviour
         if (sound != null) AM.PlayOneShot(sound);
     }
 
+    IEnumerator BreakAni()
+    {
+        float[] xVelo = {
+            Random.Range(-0.5f, -1.5f),
+            Random.Range(0.5f, 1.5f),
+            Random.Range(-0.5f, -1.5f),
+            Random.Range(0.5f, 1.5f)
+        };
+        float[] yVelo = {
+            Random.Range(-0.5f, -1f),
+            Random.Range(-0.5f, -1f),
+            Random.Range(-0.5f, -1f),
+            Random.Range(-0.5f, -1f)
+        };
+        float[] rotateSpeed =
+        {
+            Random.Range(-2f, -4f),
+            Random.Range(2f, 4f),
+            Random.Range(-2f, -4f),
+            Random.Range(2f, 4f)
+        };
+
+        float fTime = 0f;
+
+        while (true)
+        {
+            fTime += Time.smoothDeltaTime;
+            for(int i = 0; i < 4; ++i)
+            {
+                AniMove(BrokenBoxes[i], xVelo[i], yVelo[i], rotateSpeed[i]);
+                if (xVelo[i] > 0.1) xVelo[i] -= 1.5f * Time.smoothDeltaTime;
+                if (xVelo[i] < -0.1) xVelo[i] += 1.5f * Time.smoothDeltaTime;
+                yVelo[i] -= 5 * Time.smoothDeltaTime;
+            }
+
+            if (fTime >= 2f)
+            {
+                Destroy(gameObject);
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    public void AniMove(Transform tr, float xVelo, float yVelo, float rotSpeed)
+    {
+        tr.position += new Vector3(xVelo, yVelo);
+        tr.Rotate(0f, 0f, rotSpeed);
+    }
+
     private void OnTriggerEnter2D(Collider2D CrashObj)
     {
         if (CrashObj.gameObject.CompareTag("Player"))
@@ -129,7 +182,11 @@ public class BoxBase_Idle : MonoBehaviour
                 if (bDestroyable)
                 {
                     ++nCrashedCount;
-                    if (nCrashedCount >= nDestroyCount) Destroy(gameObject);
+                    if (nCrashedCount >= nDestroyCount)
+                    {
+                        Destroy(GetComponent<BoxCollider2D>());
+                        StartCoroutine(BreakAni());
+                    }
                     ShowNum.text = nDestroyCount - nCrashedCount + "";
                 }
                 if (bControlBox)

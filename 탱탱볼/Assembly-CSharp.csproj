@@ -150,6 +150,7 @@
     <Compile Include="Assets\Scripts\UI\ClearUI.cs" />
     <Compile Include="Assets\Scripts\UI\ContentArray.cs" />
     <Compile Include="Assets\Scripts\UI\InputAnyKeyToStart.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopDropDown.cs" />
     <Compile Include="Assets\Scripts\UI\ShowOwnedCoin.cs" />
     <Compile Include="Assets\Scripts\UI\SoundControl.cs" />
     <Compile Include="Assets\Scripts\UI\TimeUI.cs" />
