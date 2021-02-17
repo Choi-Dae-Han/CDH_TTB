@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4226264503051932871}
   - component: {fileID: 5003307797012262658}
   - component: {fileID: 5285938572673969696}
-  - component: {fileID: 1088650613608395945}
+  - component: {fileID: 1480374627889910324}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1088650613608395945}
+      - m_Target: {fileID: 1480374627889910324}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -132,7 +132,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1088650613608395945}
+      - m_Target: {fileID: 1480374627889910324}
         m_MethodName: ExitGameStage
         m_Mode: 1
         m_Arguments:
@@ -143,7 +143,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1088650613608395945
+--- !u!114 &1480374627889910324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,27 +152,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8417919359267898858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2966c6ac3c164744d885b7c685fbabbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
 --- !u!1 &9117014518789720860
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +435,7 @@ GameObject:
   - component: {fileID: 9192959871234087078}
   - component: {fileID: 9192959871234087081}
   - component: {fileID: 9192959871234087080}
-  - component: {fileID: 9192959871234087083}
+  - component: {fileID: 4330568538847376835}
   m_Layer: 5
   m_Name: ReTryButton
   m_TagString: Untagged
@@ -554,7 +543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9192959871234087083}
+      - m_Target: {fileID: 4330568538847376835}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -566,7 +555,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9192959871234087083}
+      - m_Target: {fileID: 4330568538847376835}
         m_MethodName: RetryGameStage
         m_Mode: 1
         m_Arguments:
@@ -577,7 +566,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9192959871234087083}
+      - m_Target: {fileID: 4330568538847376835}
         m_MethodName: DeleteUI
         m_Mode: 1
         m_Arguments:
@@ -588,7 +577,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9192959871234087083
+--- !u!114 &4330568538847376835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,27 +586,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 9192959871234087085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2966c6ac3c164744d885b7c685fbabbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
 --- !u!1 &9192959871332530751
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class StageData
+﻿public class StageData
 {
     public int GotCoins;
     public bool Cleared;

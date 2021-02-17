@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1836094208030275137}
   - component: {fileID: 6468773238748772034}
   - component: {fileID: 3767952156296142310}
-  - component: {fileID: 1992830834068370064}
+  - component: {fileID: 4132031761829006638}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1992830834068370064}
+      - m_Target: {fileID: 4132031761829006638}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -132,7 +132,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1992830834068370064}
+      - m_Target: {fileID: 4132031761829006638}
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -143,7 +143,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1992830834068370064
+--- !u!114 &4132031761829006638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,24 +152,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8263699975760617886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2966c6ac3c164744d885b7c685fbabbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  UsingLockImg: {fileID: 0}
-  UI: {fileID: 1853275107811435255, guid: ddeecd57ba891f14495e958825c5cc0b, type: 3}
+  UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}

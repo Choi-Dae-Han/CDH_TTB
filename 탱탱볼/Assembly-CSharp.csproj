@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_10;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;UNITY_ASTC_ONLY_DECOMPRESS;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_10;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -49,7 +49,7 @@
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectGeneratorVersion>4.8.2.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2019.4.10f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -98,72 +98,64 @@
     <Compile Include="Assets\Else\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Else\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Else\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
-    <Compile Include="Assets\Graphics\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\Graphics\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
-    <Compile Include="Assets\Scripts\AddScoreObj.cs" />
-    <Compile Include="Assets\Scripts\ArrowBox.cs" />
-    <Compile Include="Assets\Scripts\AwakeGame.cs" />
-    <Compile Include="Assets\Scripts\Ball.cs" />
-    <Compile Include="Assets\Scripts\BallEffect_01.cs" />
-    <Compile Include="Assets\Scripts\BoxBase_Idle.cs" />
-    <Compile Include="Assets\Scripts\BoxBase_Moving.cs" />
-    <Compile Include="Assets\Scripts\ClearObj.cs" />
-    <Compile Include="Assets\Scripts\DeadLine.cs" />
-    <Compile Include="Assets\Scripts\DecreaseLifeObj.cs" />
-    <Compile Include="Assets\Scripts\DisappearEffect.cs" />
-    <Compile Include="Assets\Scripts\Effect.cs" />
-    <Compile Include="Assets\Scripts\EffectGoods.cs" />
+    <Compile Include="Assets\Graphics\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\Graphics\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+    <Compile Include="Assets\Graphics\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
+    <Compile Include="Assets\Graphics\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\Scripts\Else\AwakeGame.cs" />
     <Compile Include="Assets\Scripts\Else\Data\BallData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\ButtonData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\DataManager.cs" />
     <Compile Include="Assets\Scripts\Else\Data\GoodsData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Else\Data\SaveAllData.cs" />
-    <Compile Include="Assets\Scripts\Else\Data\Stage.cs" />
     <Compile Include="Assets\Scripts\Else\Data\StageData.cs" />
     <Compile Include="Assets\Scripts\Else\DrawIfAttribute.cs" />
     <Compile Include="Assets\Scripts\Else\DrawIfPropertyDrawer.cs" />
     <Compile Include="Assets\Scripts\Else\FollowCamera.cs" />
-    <Compile Include="Assets\Scripts\Else\Shop.cs" />
-    <Compile Include="Assets\Scripts\Else\ShopStage.cs" />
-    <Compile Include="Assets\Scripts\FireMuzzle.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\EffectGoods.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\GoodsInfo.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\Shop.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\ShopStage.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\SkinGoods.cs" />
+    <Compile Include="Assets\Scripts\Else\Shop\SoundEffectGoods.cs" />
+    <Compile Include="Assets\Scripts\Else\Stage.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GoodsInfo.cs" />
-    <Compile Include="Assets\Scripts\Monster.cs" />
-    <Compile Include="Assets\Scripts\Portal.cs" />
-    <Compile Include="Assets\Scripts\SkinGoods.cs" />
-    <Compile Include="Assets\Scripts\SoundEffectGoods.cs" />
+    <Compile Include="Assets\Scripts\InGame\AddScoreObj.cs" />
+    <Compile Include="Assets\Scripts\InGame\Ball.cs" />
+    <Compile Include="Assets\Scripts\InGame\BallEffect_01.cs" />
+    <Compile Include="Assets\Scripts\InGame\BoxBase_Idle.cs" />
+    <Compile Include="Assets\Scripts\InGame\BoxBase_Moving.cs" />
+    <Compile Include="Assets\Scripts\InGame\ClearObj.cs" />
+    <Compile Include="Assets\Scripts\InGame\DeadLine.cs" />
+    <Compile Include="Assets\Scripts\InGame\DecreaseLifeObj.cs" />
+    <Compile Include="Assets\Scripts\InGame\DisappearEffect.cs" />
+    <Compile Include="Assets\Scripts\InGame\Effect.cs" />
+    <Compile Include="Assets\Scripts\InGame\FireMuzzle.cs" />
+    <Compile Include="Assets\Scripts\InGame\Monster.cs" />
+    <Compile Include="Assets\Scripts\InGame\Portal.cs" />
     <Compile Include="Assets\Scripts\Test\Test.cs" />
     <Compile Include="Assets\Scripts\UI\BackGround.cs" />
     <Compile Include="Assets\Scripts\UI\BlinkText.cs" />
-    <Compile Include="Assets\Scripts\UI\ButtonFunction.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\BasicButton.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\ExitGameButton.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\InputAnyKeyToStart.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\ShopButton.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\StageButton.cs" />
     <Compile Include="Assets\Scripts\UI\ChildUI.cs" />
     <Compile Include="Assets\Scripts\UI\ClearUI.cs" />
     <Compile Include="Assets\Scripts\UI\ContentArray.cs" />
-    <Compile Include="Assets\Scripts\UI\InputAnyKeyToStart.cs" />
     <Compile Include="Assets\Scripts\UI\ShopDropDown.cs" />
     <Compile Include="Assets\Scripts\UI\ShowOwnedCoin.cs" />
     <Compile Include="Assets\Scripts\UI\SoundControl.cs" />
-    <Compile Include="Assets\Scripts\UI\TimeUI.cs" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Graphics\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+    <None Include="Assets\Graphics\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Graphics\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
     <None Include="Assets\Else\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Else\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Graphics\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Else\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -174,7 +166,7 @@
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Else\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Graphics\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\Graphics\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Else\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -208,6 +200,12 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>

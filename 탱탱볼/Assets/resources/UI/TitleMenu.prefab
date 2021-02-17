@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f3cfa927ed7c34697e2b2403c06eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlinkSpeed: 1.5
 --- !u!1 &177266618859533469
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +502,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8619564492576737085}
+      objectReference: {fileID: 3156726227385792277}
     - target: {fileID: 8496919414048675600, guid: f46ac2f7b01f91648ad248fa82038ce2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -655,15 +656,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 177266618695847970}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8619564492576737085 stripped
+--- !u!114 &3156726227385792277 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8496919414048675615, guid: f46ac2f7b01f91648ad248fa82038ce2,
+  m_CorrespondingSourceObject: {fileID: 3007057424685967159, guid: f46ac2f7b01f91648ad248fa82038ce2,
     type: 3}
   m_PrefabInstance: {fileID: 177266618695847970}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: cd8bdceac77c9914a84fd7278c7f008b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -473,6 +473,7 @@ MonoBehaviour:
   StayRangeY: 70
   HighestY: 0
   LowestY: 0
+  LastBallPos: {x: 0, y: 0, z: 0}
   GoingTarget: {x: 0, y: 0, z: 0}
 --- !u!20 &554915388
 Camera:
@@ -1222,6 +1223,17 @@ PrefabInstance:
     - target: {fileID: 2567548552503001852, guid: bf3bbd01022ce804caffd759ea5fc62e,
         type: 3}
       propertyPath: ShopStage
+      value: 
+      objectReference: {fileID: 4936879872122502707, guid: e41442f348a1e6145845fbe9c86689c8,
+        type: 3}
+    - target: {fileID: 2567548552503001852, guid: bf3bbd01022ce804caffd759ea5fc62e,
+        type: 3}
+      propertyPath: UICamera
+      value: 
+      objectReference: {fileID: 1906034981}
+    - target: {fileID: 2567548552503001852, guid: bf3bbd01022ce804caffd759ea5fc62e,
+        type: 3}
+      propertyPath: shopStage
       value: 
       objectReference: {fileID: 4936879872122502707, guid: e41442f348a1e6145845fbe9c86689c8,
         type: 3}

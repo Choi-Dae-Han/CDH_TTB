@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9219957038185834602}
   - component: {fileID: 8943334967874661465}
   - component: {fileID: 2732492894730761987}
-  - component: {fileID: 5848431143873379760}
+  - component: {fileID: 3060101499084792674}
   m_Layer: 5
   m_Name: Button_Buy
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5848431143873379760}
+      - m_Target: {fileID: 3060101499084792674}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -132,7 +132,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5848431143873379760}
+      - m_Target: {fileID: 3060101499084792674}
         m_MethodName: BuyGoods
         m_Mode: 1
         m_Arguments:
@@ -143,7 +143,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5848431143873379760}
+      - m_Target: {fileID: 3060101499084792674}
         m_MethodName: DeleteUI
         m_Mode: 1
         m_Arguments:
@@ -154,7 +154,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5848431143873379760
+--- !u!114 &3060101499084792674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,34 +163,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 270201065672619522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
   SoldImg: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
 --- !u!1 &6779453348735738042
 GameObject:
   m_ObjectHideFlags: 0

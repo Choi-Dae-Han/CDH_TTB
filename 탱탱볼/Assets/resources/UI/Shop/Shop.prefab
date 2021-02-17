@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 2138035450217482168}
   - component: {fileID: 5377648040773147053}
   - component: {fileID: 7938855963431222037}
-  - component: {fileID: 1503777401928898579}
+  - component: {fileID: 6009961150979122763}
   m_Layer: 5
   m_Name: Button_Test
   m_TagString: Untagged
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503777401928898579}
+      - m_Target: {fileID: 6009961150979122763}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -206,7 +206,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1503777401928898579}
+      - m_Target: {fileID: 6009961150979122763}
         m_MethodName: LoadShopStage
         m_Mode: 1
         m_Arguments:
@@ -217,7 +217,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1503777401928898579
+--- !u!114 &6009961150979122763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,28 +226,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 670158383996727590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
-  UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
+  UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 7569751787164485474}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 7968199317822412129}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
+  ContentRT: {fileID: 0}
   SellingEffect: {fileID: 0}
   SellingSE: {fileID: 0}
   SellingSkin: {fileID: 0}
@@ -675,12 +666,19 @@ MonoBehaviour:
   Text_Skin: {fileID: 2148677560196537210}
   Text_Effect: {fileID: 865277999450813059}
   Text_SoundEffect: {fileID: 880099032723434826}
+  TestApplyButton: {fileID: 7688231827371088685, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
+    type: 3}
+  BuyButton: {fileID: 270201065672619522, guid: 408846185bbc03c4c81fa724233ed0ed,
+    type: 3}
+  ApplyButton: {fileID: 8822244601640575654, guid: eca2852e6f958d24e9ba91fce11ebd45,
+    type: 3}
   ShopBallSprite: {fileID: 0}
   ShopBallSE: {fileID: 0}
   ShopBallEffect: {fileID: 0}
   BGIofShopBallSprite: {fileID: 1348485622244539088}
   BGIofShopBallSE: {fileID: 3689804712644588748}
   BGIofShopBallEffect: {fileID: 1224920085085047908}
+  SoldImg: {fileID: 3571427724943778083, guid: 76bfd7f7e45d03746be33d0eb0d881bb, type: 3}
   BackGroundForStage: {fileID: 0}
   GroundsForStage: {fileID: 0}
 --- !u!1 &1729874188464778792
@@ -795,7 +793,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: 75}
+  m_SizeDelta: {x: -10, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2658276295218314910
 MonoBehaviour:
@@ -1034,8 +1032,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: 20}
-  m_SizeDelta: {x: 250, y: 90}
+  m_AnchoredPosition: {x: 190, y: 20}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8894579644289632694
 CanvasRenderer:
@@ -1272,7 +1270,7 @@ GameObject:
   - component: {fileID: 5972759703749745703}
   - component: {fileID: 2078858383822404115}
   - component: {fileID: 6644129887601621803}
-  - component: {fileID: 1202585807559098956}
+  - component: {fileID: 4935163085443762516}
   m_Layer: 5
   m_Name: Button_Reset
   m_TagString: Untagged
@@ -1380,7 +1378,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1202585807559098956}
+      - m_Target: {fileID: 4935163085443762516}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -1392,7 +1390,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1202585807559098956}
+      - m_Target: {fileID: 4935163085443762516}
         m_MethodName: ResetApply
         m_Mode: 1
         m_Arguments:
@@ -1403,7 +1401,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1202585807559098956
+--- !u!114 &4935163085443762516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1412,28 +1410,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2860203671095575856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
-  UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
+  UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 7569751787164485474}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
+  ContentRT: {fileID: 0}
   SellingEffect: {fileID: 0}
   SellingSE: {fileID: 0}
   SellingSkin: {fileID: 0}
@@ -1738,7 +1727,7 @@ GameObject:
   - component: {fileID: 1290599294694856920}
   - component: {fileID: 6800110776171506243}
   - component: {fileID: 4015581917732640397}
-  - component: {fileID: 1656670287586384451}
+  - component: {fileID: 3407284503674569337}
   m_Layer: 5
   m_Name: Button_Effect
   m_TagString: Untagged
@@ -1846,7 +1835,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1656670287586384451}
+      - m_Target: {fileID: 3407284503674569337}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -1858,7 +1847,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1656670287586384451}
+      - m_Target: {fileID: 3407284503674569337}
         m_MethodName: ShowShopList
         m_Mode: 1
         m_Arguments:
@@ -1869,7 +1858,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1656670287586384451
+--- !u!114 &3407284503674569337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1878,28 +1867,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3754519183080913101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 5295919418140358025, guid: 007d863fc4af10b4e948e831838f9677, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 7569751787164485474}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
+  ContentRT: {fileID: 7569751787164485474}
   SellingEffect: {fileID: 0}
   SellingSE: {fileID: 0}
   SellingSkin: {fileID: 0}
@@ -2065,13 +2045,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076007455601432597}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1450921688212760059}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -25, y: 0}
@@ -2104,7 +2084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1838039185877957978, guid: f5764b537d477e942a7e932abfb97430,
+  m_Sprite: {fileID: 2321843339481635706, guid: 9e9ed99772a772b4bae2ec6b35b5b9a0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2163,7 +2143,7 @@ GameObject:
   - component: {fileID: 3415663045269812934}
   - component: {fileID: 6865007331897139505}
   - component: {fileID: 6893519895931577511}
-  - component: {fileID: 6759030324556273937}
+  - component: {fileID: 2561721433659318990}
   m_Layer: 5
   m_Name: Button_SoundEffect
   m_TagString: Untagged
@@ -2271,7 +2251,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6759030324556273937}
+      - m_Target: {fileID: 2561721433659318990}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -2283,7 +2263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6759030324556273937}
+      - m_Target: {fileID: 2561721433659318990}
         m_MethodName: ShowShopList
         m_Mode: 1
         m_Arguments:
@@ -2294,7 +2274,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6759030324556273937
+--- !u!114 &2561721433659318990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2303,28 +2283,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4244668635211281495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 2713453929611848444, guid: aa8e44dabd9e6cb449e15008b7528ebd, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 7569751787164485474}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
+  ContentRT: {fileID: 7569751787164485474}
   SellingEffect: {fileID: 0}
   SellingSE: {fileID: 0}
   SellingSkin: {fileID: 0}
@@ -2343,7 +2314,7 @@ GameObject:
   - component: {fileID: 902805401400182569}
   - component: {fileID: 3354796141231995362}
   - component: {fileID: 6056954056245457016}
-  - component: {fileID: 6506794848948599101}
+  - component: {fileID: 4346161103002998435}
   m_Layer: 5
   m_Name: Button_Skin
   m_TagString: Untagged
@@ -2451,7 +2422,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6506794848948599101}
+      - m_Target: {fileID: 4346161103002998435}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -2463,7 +2434,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6506794848948599101}
+      - m_Target: {fileID: 4346161103002998435}
         m_MethodName: ShowShopList
         m_Mode: 1
         m_Arguments:
@@ -2474,7 +2445,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6506794848948599101
+--- !u!114 &4346161103002998435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2483,28 +2454,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4851665538089690518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e92bba27807f94e973a74b68c170a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 1
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 8381897247372697555, guid: c5fb27cb1a9bb6f4092bba6858ff7cdb, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 7569751787164485474}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
+  goodsState: 0
   GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
+  ContentRT: {fileID: 7569751787164485474}
   SellingEffect: {fileID: 0}
   SellingSE: {fileID: 0}
   SellingSkin: {fileID: 0}
@@ -2523,7 +2485,7 @@ GameObject:
   - component: {fileID: 5130336989333422069}
   - component: {fileID: 5008533431426232893}
   - component: {fileID: 5388283923984278868}
-  - component: {fileID: 8960021516186412148}
+  - component: {fileID: 4477376000628513395}
   m_Layer: 5
   m_Name: Button_Exit
   m_TagString: Untagged
@@ -2631,7 +2593,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8960021516186412148}
+      - m_Target: {fileID: 4477376000628513395}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -2643,7 +2605,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8960021516186412148}
+      - m_Target: {fileID: 4477376000628513395}
         m_MethodName: ChangeGMState
         m_Mode: 3
         m_Arguments:
@@ -2654,7 +2616,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8960021516186412148
+--- !u!114 &4477376000628513395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2663,34 +2625,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5020536232861908064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: cd8bdceac77c9914a84fd7278c7f008b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonState: 2
-  goodsState: 0
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  TestApplyButton: {fileID: 0}
-  BuyButton: {fileID: 0}
-  ApplyButton: {fileID: 0}
-  GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
 --- !u!1 &5152781836854532316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,7 +3293,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 80}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &7152853606472873635
 GameObject:
@@ -4413,8 +4357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
-  m_SizeDelta: {x: -40, y: -10}
+  m_AnchoredPosition: {x: 25, y: 0}
+  m_SizeDelta: {x: -50, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2576344223247393900
 CanvasRenderer:
@@ -4445,7 +4389,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7cbd87d35dbe99241a6fa527f0efbc51, type: 3}
-    m_FontSize: 20
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

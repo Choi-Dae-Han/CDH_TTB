@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6488422450801199852}
   - component: {fileID: 8874094654090484691}
   - component: {fileID: 989513227147750111}
-  - component: {fileID: 8420806517996141445}
+  - component: {fileID: 5746959319076861236}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -119,18 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8420806517996141445}
-        m_MethodName: DeleteUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8420806517996141445}
+      - m_Target: {fileID: 5746959319076861236}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -142,7 +131,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8420806517996141445
+      - m_Target: {fileID: 5746959319076861236}
+        m_MethodName: DeleteUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5746959319076861236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,30 +151,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 639563932488783507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: cd8bdceac77c9914a84fd7278c7f008b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: 2
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 0}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinImage: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  GoodsImgTR: {fileID: 0}
-  SoldImg: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
+  AM: {fileID: 0}
+  GM: {fileID: 0}
 --- !u!1 &896884731094852149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,12 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoodsImage: {fileID: 1733878150309397899}
-  TestApplyButton: {fileID: 9015363735540654097, guid: bfc50470f7e2def4fa1d7958df1f7f7f,
-    type: 3}
-  BuyButton: {fileID: 5848431143873379760, guid: 408846185bbc03c4c81fa724233ed0ed,
-    type: 3}
-  ApplyButton: {fileID: 2952346958126819604, guid: eca2852e6f958d24e9ba91fce11ebd45,
-    type: 3}
+  ParentButton: {fileID: 0}
   TestApplyButtonTR: {fileID: 6001225854972295272}
   BuyButtonTR: {fileID: 9017300820738962329}
   ApplyButtonTR: {fileID: 1498726206958000419}

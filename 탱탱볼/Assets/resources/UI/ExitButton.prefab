@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 8496919414048675614}
   - component: {fileID: 8496919414048675601}
   - component: {fileID: 8496919414048675600}
-  - component: {fileID: 8496919414048675615}
+  - component: {fileID: 3007057424685967159}
   - component: {fileID: 6333818905610646308}
-  - component: {fileID: 7168058302342686145}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8496919414048675615}
+      - m_Target: {fileID: 3007057424685967159}
         m_MethodName: ShowUI
         m_Mode: 1
         m_Arguments:
@@ -133,7 +132,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8496919414048675615}
+      - m_Target: {fileID: 3007057424685967159}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -145,7 +144,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8496919414048675615
+--- !u!114 &3007057424685967159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,27 +153,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8496919414048675602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: cd8bdceac77c9914a84fd7278c7f008b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: 2
-  UsingLockImg: {fileID: 0}
   UI: {fileID: 8765030889207985292, guid: ae00b1977a623b4498ff18765dd5a5ab, type: 3}
   UsingUI: {fileID: 0}
   OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  CoinUIPos: []
-  stage: {fileID: 0}
-  shop: {fileID: 0}
-  SellingEffect: {fileID: 0}
-  SellingSE: {fileID: 0}
-  SellingSkin: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
 --- !u!82 &6333818905610646308
 AudioSource:
   m_ObjectHideFlags: 0
@@ -271,29 +255,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!61 &7168058302342686145
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8496919414048675602}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 120, y: 120}
-  m_EdgeRadius: 0

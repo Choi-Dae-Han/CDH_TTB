@@ -250,6 +250,7 @@ MonoBehaviour:
   nDestroyCount: 0
   nCrashedCount: 0
   ShowNum: {fileID: 0}
+  BrokenBoxes: []
   Left: {fileID: 4386269583999926114}
   Right: {fileID: 4386269581942955603}
   Top: {fileID: 4386269583086125558}

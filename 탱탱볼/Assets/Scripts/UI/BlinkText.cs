@@ -1,20 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BlinkText : MonoBehaviour
 {
     TMPro.TMP_Text T;
     bool isBright = false;
+    public float BlinkSpeed = 1.5f;
 
     private void Awake()
     {
         T = GetComponent<TMPro.TMP_Text>();
+        BlinkSpeed *= Time.smoothDeltaTime;
     }
 
     void Update()
     {
-        BlinkAlpha(T, 1.5f * Time.smoothDeltaTime);
+        BlinkAlpha(T, BlinkSpeed);
     }
 
     void BlinkAlpha(TMPro.TMP_Text text, float speed)

@@ -86,8 +86,8 @@ GameObject:
   - component: {fileID: 8765030889548183884}
   - component: {fileID: 8765030889548183885}
   - component: {fileID: 8765030889548183890}
-  - component: {fileID: 8765030889548183887}
   - component: {fileID: 8765030889548183886}
+  - component: {fileID: 6126373292371406220}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8765030889548183887}
+      - m_Target: {fileID: 6126373292371406220}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -207,7 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8765030889548183887}
+      - m_Target: {fileID: 6126373292371406220}
         m_MethodName: DeleteUI
         m_Mode: 1
         m_Arguments:
@@ -218,32 +218,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8765030889548183887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8765030889548183888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonState: 2
-  UsingLockImg: {fileID: 0}
-  UI: {fileID: 0}
-  UsingUI: {fileID: 0}
-  OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  FileName: 
-  stage: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
 --- !u!82 &8765030889548183886
 AudioSource:
   m_ObjectHideFlags: 0
@@ -340,6 +314,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6126373292371406220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765030889548183888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8bdceac77c9914a84fd7278c7f008b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonState: 2
+  UI: {fileID: 0}
+  UsingUI: {fileID: 0}
+  OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
 --- !u!1 &8765030889586318838
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,8 +613,8 @@ GameObject:
   - component: {fileID: 8765030890576008246}
   - component: {fileID: 8765030890576008247}
   - component: {fileID: 8765030890576008244}
-  - component: {fileID: 8765030890576008241}
   - component: {fileID: 8765030890576008240}
+  - component: {fileID: 2758212035681404982}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -729,7 +722,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8765030890576008241}
+      - m_Target: {fileID: 2758212035681404982}
         m_MethodName: UISound
         m_Mode: 2
         m_Arguments:
@@ -741,7 +734,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8765030890576008241}
+      - m_Target: {fileID: 2758212035681404982}
         m_MethodName: ExitAppication
         m_Mode: 1
         m_Arguments:
@@ -752,32 +745,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8765030890576008241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8765030890576008250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53da973cc66daec4488cf082b91b9d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonState: 2
-  UsingLockImg: {fileID: 0}
-  UI: {fileID: 0}
-  UsingUI: {fileID: 0}
-  OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
-  BGI: {fileID: 0}
-  BGIofButton: {fileID: 0}
-  ContentRT: {fileID: 0}
-  StageListRT: {fileID: 0}
-  FileName: 
-  stage: {fileID: 0}
-  GoodsName: {fileID: 0}
-  MoneyPrice: 0
-  CoinPrice: 0
 --- !u!82 &8765030890576008240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -874,6 +841,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2758212035681404982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765030890576008250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424eff2ed7f59ac42876b7a5b7e392e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonState: 2
+  UI: {fileID: 0}
+  UsingUI: {fileID: 0}
+  OnMouseSE: {fileID: 8300000, guid: 8dc66c2046be7ac4b9956c77f9d90bef, type: 3}
+  AM: {fileID: 0}
+  GM: {fileID: 0}
+  UsingLockImg: {fileID: 0}
 --- !u!1 &8765030890594746850
 GameObject:
   m_ObjectHideFlags: 0
